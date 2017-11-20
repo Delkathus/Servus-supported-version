@@ -9,7 +9,6 @@
         public int Element { get; set; }
 
         public int Icon_id { get; set; }
-
         public int Mp_cost { get; set; }
 
         public ushort Recast_id { get; set; }

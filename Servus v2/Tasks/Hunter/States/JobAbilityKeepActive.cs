@@ -27,7 +27,7 @@ namespace Servus_v2.Tasks.Hunter.States
 
         public override bool NeedToRun => Enabled
                                           && !Character.Busy
-                && !Character.IsAfflicteAmnesia
+                                          && !Character.IsAfflicteAmnesia
                                           && !Character.IsMoving
                                           && Character._Abilities.AbilityNeeded() != "none";
 

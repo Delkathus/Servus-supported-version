@@ -74,7 +74,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Servus.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AD677DD01CF4DEC03EFE88D115AF82E201FC2E9D</ManifestCertificateThumbprint>
@@ -230,6 +231,7 @@
     <Content Include="Resources\EliteAPI.dll" />
     <Content Include="Resources\EliteMMO.API.dll" />
     <Content Include="Servus.ico" />
+    <None Include="Resources\Image1.bmp" />
     <None Include="Resources\Servus.ico" />
   </ItemGroup>
   <ItemGroup>

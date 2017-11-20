@@ -32,7 +32,6 @@ namespace Servus_v2.Tasks.Hunter.States
         public override bool NeedToRun => Enabled
                                           && !Character.Busy
                                           && !Character.IsMoving
-                      && !Character.IsSilenced
                                           && SelfDebuffs(actionPriorities);
 
         public override int Priority

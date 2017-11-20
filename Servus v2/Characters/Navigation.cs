@@ -2,10 +2,7 @@
 using Servus_v2.Common;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
-using System.Windows.Forms;
-using System.Xml;
 
 namespace Servus_v2.Characters
 {
@@ -322,7 +319,7 @@ namespace Servus_v2.Characters
                     count = 0;
                 }
             }
-            Character.Api.ThirdParty.KeyUp(EliteMMO.API.Keys.NUMPAD8);
-        }
+            Character.Api.ThirdParty.KeyUp(EliteMMO.API.Keys.NUMPAD8)}
     }
+}
 }
