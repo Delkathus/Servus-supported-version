@@ -71,14 +71,35 @@ namespace Servus_v2.Characters
             Character.Api.Entity.SetEntityHPosition(Character.Api.Entity.LocalPlayerIndex, (float)radian);
         }
 
-        public List<Node> GetPath(float X, float Z)
+        public bool Desti()
+        {
+            if (Character.Target.FindBestTarget() != 0)
+            {
+                var mob = Character.Api.Entity.GetEntity(Character.Target.FindBestTarget());
+
+                var End = Character.Navi.GetWaypointClosestTo(mob.X, mob.Z);
+
+                if (mob != null || End != null)
+                {
+                    if (Character.Api.Player.X == End.X && Character.Api.Player.Z == End.Z)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+            return false;
+        }
+
+        public List<Node> GetPath(float X, float Z, int id)
         {
             List<Node> ReturnPath = new List<Node>();
             var Temp = GetWaypointClosestTo(Character.Api.Player.X, Character.Api.Player.Z);
-            int StartingX = Convert.ToInt32(Character.Api.Player.X) + offset;
-            int StartingZ = Convert.ToInt32(Character.Api.Player.Z) + offset;
+            int StartingX = Convert.ToInt32(Temp.X) + offset;
+            int StartingZ = Convert.ToInt32(Temp.Z) + offset;
             int DestinationX = Convert.ToInt32(X) + offset;
             int DestinationZ = Convert.ToInt32(Z) + offset;
+            var mob = Character.Api.Entity.GetEntity(id);
             List<PathFinderNode> Path = new PathFinderFast(Grid).FindPath(new DeenGames.Utils.Point(StartingX, StartingZ), new DeenGames.Utils.Point(DestinationX, DestinationZ));
             if (Path != null && Path.Count > 5)
             {
@@ -102,8 +123,13 @@ namespace Servus_v2.Characters
             if (Path == null || Path.Count < 5)
             {
                 FailedToPath++;
-                Character.Logger.AddDebugText(Character.Tc.rtbDebug, string.Format(@"Failed To Find Path to {0} distance
-                // {1}y", Character.Api.Entity.GetEntity(Character.Target.FindBestTarget()).Name, Character.Api.Entity.GetEntity(Character.Target.FindBestTarget()).Distance));
+
+                Character.Logger.AddDebugText(Character.Tc.rtbDebug, string.Format(@"Failed To Find Path to {0} distance // {1}y", mob.Name.ToString(), mob.Distance.ToString()));
+            }
+            if (FailedToPath > 2)
+            {
+                Character.Target.BlockedTargets.Add(id);
+                Character.Logger.AddDebugText(Character.Tc.rtbDebug, string.Format(@"failed to path to many times. added {0} id {1} to blocked target list", mob.Name, id.ToString()));
             }
 
             return ReturnPath;
@@ -153,8 +179,7 @@ namespace Servus_v2.Characters
                 {
                     Waypoints.Add(new Node { X = Character.Api.Player.X, Y = Character.Api.Player.Y, Z = Character.Api.Player.Z, H = Character.Api.Player.H, Zone = Character.CurrentZone });
                     Grid[Convert.ToInt32(Character.Api.Player.X) + offset, Convert.ToInt32(Character.Api.Player.Z) + offset] = PathFinderHelper.EMPTY_TILE;
-                    Character.Logger.AddDebugText(Character.Tc.rtbDebug, string.Format(@"Added tile
-                     {0},{1},{2}", (Convert.ToInt32(Character.Api.Player.X) + offset).ToString(),
+                    Character.Logger.AddDebugText(Character.Tc.rtbDebug, string.Format(@"Added tile {0},{1}", (Convert.ToInt32(Character.Api.Player.X) + offset).ToString(),
                     (Convert.ToInt32(Character.Api.Player.Z) + offset).ToString()));
                 }
             }
@@ -319,7 +344,7 @@ namespace Servus_v2.Characters
                     count = 0;
                 }
             }
-            Character.Api.ThirdParty.KeyUp(EliteMMO.API.Keys.NUMPAD8)}
+            Character.Api.ThirdParty.KeyUp(EliteMMO.API.Keys.NUMPAD8);
+        }
     }
-}
 }

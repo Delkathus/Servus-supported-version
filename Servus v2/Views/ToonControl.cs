@@ -758,7 +758,7 @@ namespace Servus_v2.Views
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Character.SaveOrLoad.SaveSettings();
+            Character.SaveSettings();
         }
 
         private void AshitaLinkl_Click(object sender, EventArgs e)
@@ -810,6 +810,7 @@ namespace Servus_v2.Views
         {
             Character.Navi.ClearWaypointsAndGrid();
             WayPointListbox.Items.Clear();
+            WPLoadedLB.Text = "--";
         }
 
         private void SaveWayPointsBtn_Click(object sender, EventArgs e)
@@ -819,7 +820,952 @@ namespace Servus_v2.Views
 
         private void LoadWayPointsBtn_Click(object sender, EventArgs e)
         {
-            Character.Navi.LoadWaypoints();
+            Character.SaveOrLoad.LoadWaypoints();
+        }
+
+        private void FailedUPdown_ValueChanged(object sender, EventArgs e)
+        {
+            Character.Tasks.Huntertask.Options.FailedToPathCount = (int)FailedUPdown.Value;
+        }
+
+        private void IdleDelayValue_ValueChanged(object sender, EventArgs e)
+        {
+            Character.Tasks.Huntertask.Options.IdleDelay = (int)IdleDelayValue.Value;
+        }
+
+        private void AttackDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AttackDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseAttackDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseAttackDown = false;
+        }
+
+        private void AddleCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AddleCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseAddle = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseAddle = false;
+        }
+
+        private void AccuracyDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AccuracyDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseAccuracyDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseAccuracyDown = false;
+        }
+
+        private void AgiDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AgiDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseAGIdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseAGIdown = false;
+        }
+
+        private void BlindnessCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BlindnessCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBlindness = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBlindness = false;
+        }
+
+        private void BurnCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BurnCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBurn = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBurn = false;
+        }
+
+        private void BindCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BindCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBind = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBind = false;
+        }
+
+        private void BioCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BioCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBio = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBio = false;
+        }
+
+        private void BaneCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BaneCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBane = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBane = false;
+        }
+
+        private void ChokeCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChokeCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseChoke = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseChoke = false;
+        }
+
+        private void ChrDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChrDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseCHRdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseCHRdown = false;
+        }
+
+        private void CurseCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CurseCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseCurse = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseCurse = false;
+        }
+
+        private void Curse2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Curse2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseCurse2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseCurse2 = false;
+        }
+
+        private void DrownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DrownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseDrown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseDrown = false;
+        }
+
+        private void DoomCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DoomCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseDoom = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseDoom = false;
+        }
+
+        private void DiaCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DiaCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseDia = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseDia = false;
+        }
+
+        private void DefenseDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DefenseDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseDefenseDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseDefenseDown = false;
+        }
+
+        private void DexDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DexDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseDEXdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseDEXdown = false;
+        }
+
+        private void ElegyCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ElegyCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseElegy = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseElegy = false;
+        }
+
+        private void EvasionDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (EvasionDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseEvaDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseEvaDown = false;
+        }
+
+        private void FlashCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FlashCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseFlash = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseFlash = false;
+        }
+
+        private void FrostCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FrostCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseFlash = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseFlash = false;
+        }
+
+        private void HelixCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HelixCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseHelix = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseHelix = false;
+        }
+
+        private void IntDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (IntDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseIntDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseIntDown = false;
+        }
+
+        private void MndDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MndDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseMNDdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseMNDdown = false;
+        }
+
+        private void MagicAccDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MagicAccDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseMagACC = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseMagACC = false;
+        }
+
+        private void MagicAtkDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MagicAtkDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseMagATK = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseMagATK = false;
+        }
+
+        private void MaxHpDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MaxHpDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseHPdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseHPdown = false;
+        }
+
+        private void MaxTpDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MaxTpDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseTPdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseTPdown = false;
+        }
+
+        private void MaxMpDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MaxMpDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseMPdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseMPdown = false;
+        }
+
+        private void ParalysisCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ParalysisCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseParalysis = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseParalysis = false;
+        }
+
+        private void PlagueCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PlagueCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePlague = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePlague = false;
+        }
+
+        private void PoisonCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PoisonCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePoison = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePoison = false;
+        }
+
+        private void RaspCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RaspCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRasp = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRasp = false;
+        }
+
+        private void RequiemCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RequiemCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRequiem = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRequiem = false;
+        }
+
+        private void StrDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StrDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseSTRdown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseSTRdown = false;
+        }
+
+        private void ShockCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShockCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShock = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShock = false;
+        }
+
+        private void SilenceCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SilenceCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseSilence = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseSilence = false;
+        }
+
+        private void SlowCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SlowCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseSlow = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseSlow = false;
+        }
+
+        private void ThrenodyCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ThrenodyCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseThrenody = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseThrenody = false;
+        }
+
+        private void VitDownCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (VitDownCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseVitDown = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseVitDown = false;
+        }
+
+        private void WeightCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WeightCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseWeight = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseWeight = false;
+        }
+
+        private void AquaveilCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AquaveilCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseAquaveil = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseAquaveil = false;
+        }
+
+        private void BlinkCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BlinkCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBlink = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBlink = false;
+        }
+
+        private void Hhaste_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Hhaste.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseHasteSamba = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseHasteSamba = false;
+        }
+
+        private void HasteCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HasteCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseHaste = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseHaste = false;
+        }
+
+        private void Haste2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Haste2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseHaste2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseHaste2 = false;
+        }
+
+        private void PhalanxCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PhalanxCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePhalanx = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePhalanx = false;
+        }
+
+        private void ProtectCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ProtectCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePro = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePro = false;
+        }
+
+        private void Protect2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protect2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePro2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePro2 = false;
+        }
+
+        private void Protect3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protect3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePro3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePro3 = false;
+        }
+
+        private void Protect4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protect4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePro4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePro4 = false;
+        }
+
+        private void Protect5CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protect5CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UsePro5 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UsePro5 = false;
+        }
+
+        private void Refresh1CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Refresh1CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRefresh = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRefresh = false;
+        }
+
+        private void Refresh2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Refresh2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRefresh2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRefresh2 = false;
+        }
+
+        private void Refresh3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Refresh3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRefresh3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRefresh3 = false;
+        }
+
+        private void Regen1CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Regen1CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRegen = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRegen = false;
+        }
+
+        private void Regen2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Regen2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRegen2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRegen2 = false;
+        }
+
+        private void Regen3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Regen3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRegen3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRegen3 = false;
+        }
+
+        private void Regen5CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Regen5CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRegen5 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRegen5 = false;
+        }
+
+        private void Reraise1CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Reraise1CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseReraise = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseReraise = false;
+        }
+
+        private void Reraise2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Reraise2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseReraise2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseReraise2 = false;
+        }
+
+        private void Reraise3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Reraise3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseReraise3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseReraise3 = false;
+        }
+
+        private void Reraise4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Reraise4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseReraise4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseReraise4 = false;
+        }
+
+        private void Shell1CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shell1CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShell = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShell = false;
+        }
+
+        private void Shell2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shell2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShell2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShell2 = false;
+        }
+
+        private void Shell3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shell3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShell3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShell3 = false;
+        }
+
+        private void Shell4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shell4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShell4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShell4 = false;
+        }
+
+        private void Shell5CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (shellra5CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShell5 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShell5 = false;
+        }
+
+        private void StoneskinCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StoneskinCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseStoneSkin = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseStoneSkin = false;
+        }
+
+        private void BlazeSpikesCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BlazeSpikesCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBlazeSpikes = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBlazeSpikes = false;
+        }
+
+        private void IceSPikesCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (IceSPikesCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseIceSpikes = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseIceSpikes = false;
+        }
+
+        private void ShockSpikesCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShockSpikesCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShockSPikes = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShockSPikes = false;
+        }
+
+        private void ShellraCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShellraCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShellra = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShellra = false;
+        }
+
+        private void Shellra2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shellra2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShellra2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShellra2 = false;
+        }
+
+        private void shellra3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (shellra3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShellra3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShellra3 = false;
+        }
+
+        private void Shellra4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Shellra4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShellra4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShellra4 = false;
+        }
+
+        private void shellra5CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (shellra5CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseShellra5 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseShellra5 = false;
+        }
+
+        private void ProtectraCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ProtectraCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseProtectra = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseProtectra = false;
+        }
+
+        private void Protectra2CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protectra2CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseProtectra2 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseProtectra2 = false;
+        }
+
+        private void protectra3CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (protectra3CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseProtectra3 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseProtectra3 = false;
+        }
+
+        private void Protectra4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protectra4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseProtectra4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseProtectra4 = false;
+        }
+
+        private void Protectra5CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Protectra5CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseProtectra5 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseProtectra5 = false;
+        }
+
+        private void BoostAGICB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostAGICB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostagi = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostagi = false;
+        }
+
+        private void BoostCHRCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostCHRCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostchr = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostchr = false;
+        }
+
+        private void BoostDEXCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostDEXCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostdex = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostdex = false;
+        }
+
+        private void BoostINTCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostINTCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostint = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostint = false;
+        }
+
+        private void BoostSTRCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostSTRCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBooststr = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBooststr = false;
+        }
+
+        private void BoostMNDCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostMNDCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostmnd = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostmnd = false;
+        }
+
+        private void BoostVITCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BoostVITCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseBoostvit = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseBoostvit = false;
+        }
+
+        private void UtsusemiNiCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UtsusemiNiCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseNi = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseNi = false;
+        }
+
+        private void UtsusemiIchiCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UtsusemiIchiCB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseIchi = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseIchi = false;
+        }
+
+        private void Regen4CB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Regen4CB.CheckState.Equals(CheckState.Checked))
+            {
+                Character.Tasks.Huntertask.Options.UseRegen4 = true;
+            }
+            else
+                Character.Tasks.Huntertask.Options.UseRegen4 = false;
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Character.LoadSettings();
         }
     }
 }

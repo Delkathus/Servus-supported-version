@@ -24,16 +24,21 @@ namespace Servus_v2.Tasks.Hunter
         public event EventHandler Stopped = delegate { };
 
         public bool IsBusy => Engine.IsRunning;
-        public Options Options { get; }
+        public Options Options { get; set; }
 
         private StateEngine Engine { get; }
 
         private Taskstate TS { get; }
 
-        //public override void Save()
-        //{
-        //    XmlSerializationHelper.Serialize(FileName, Options);
-        //}
+        public void Save(string FileName)
+        {
+            XmlSerializationHelper.Serialize(FileName, Options);
+        }
+
+        public void LoadSettings(string File)
+        {
+            Options = XmlSerializationHelper.Deserialize<Options>(File) ?? new Options();
+        }
 
         public override void Start()
         {
@@ -65,13 +70,14 @@ namespace Servus_v2.Tasks.Hunter
 
         private void InitializeStateEngine()
         {
-            // Engine.AddState(new Idle(Character) { OnDeath = true, OnPartyDisband = true });
+            Engine.AddState(new Idle(Character, Options, TS) { OnDeath = true, OnPartyDisband = true });
             Engine.AddState(new InventoryChecks(Character, Options, TS) { Priority = 1, Enabled = true });
             Engine.AddState(new Debuff(Character, Options, TS) { Priority = 0, Enabled = true });
             Engine.AddState(new BUFFS(Character, Options, TS) { Priority = 0, Enabled = true });
             Engine.AddState(new AcceptRaise(Character, Options, TS) { Priority = 0, });
             Engine.AddState(new GoHome(Character, Options, TS) { Priority = 0, });
             Engine.AddState(new HealOn(Character, Options, TS) { Priority = 1, });
+            Engine.AddState(new PathFinder(Character, Options, TS) { Priority = 2, });
             Engine.AddState(new HealOff(Character, Options, TS) { Priority = 1, Enabled = true });
             Engine.AddState(new JobAbilityKeepActive(Character, Options, TS) { Priority = 2, Enabled = true });
             Engine.AddState(new TrackNextTarget(Character, Options, TS) { Priority = 3 });

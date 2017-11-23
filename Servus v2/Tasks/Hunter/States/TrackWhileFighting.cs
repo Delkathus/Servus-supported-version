@@ -66,7 +66,7 @@ namespace Servus_v2.Tasks.Hunter.States
             }
             catch (Exception ex)
             {
-                Log.AddDebugText(TC.rtbDebug, (string.Format(@"{0} , {1}", ex.Message, this)));
+                Log.AddDebugText(TC.rtbDebug, (string.Format(@"{ 0} , {1}", ex.Message, this)));
             }
         }
     }

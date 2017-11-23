@@ -74,8 +74,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Servus.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AD677DD01CF4DEC03EFE88D115AF82E201FC2E9D</ManifestCertificateThumbprint>
@@ -168,6 +167,7 @@
     <Compile Include="Tasks\Hunter\States\JobAbilityFightOnly.cs" />
     <Compile Include="Tasks\Hunter\States\JobAbilityKeepActive.cs" />
     <Compile Include="Tasks\Hunter\States\LockOn.cs" />
+    <Compile Include="Tasks\Hunter\States\PathFinder.cs" />
     <Compile Include="Tasks\Hunter\States\Pulling.cs" />
     <Compile Include="Tasks\Hunter\States\TrackNextTarget.cs" />
     <Compile Include="Tasks\Hunter\States\TrackWhileFighting.cs" />

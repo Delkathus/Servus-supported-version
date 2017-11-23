@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToonControl));
             this.Tplbl = new MetroFramework.Controls.MetroLabel();
             this.RunBtn = new MetroFramework.Controls.MetroButton();
             this.WStextBox = new System.Windows.Forms.RichTextBox();
@@ -53,6 +54,25 @@
             this.AshitaLinkl = new MetroFramework.Controls.MetroLink();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.aboutname = new System.Windows.Forms.Label();
+            this.ChatTab = new MetroFramework.Controls.MetroTabPage();
+            this.tabControl3 = new MetroFramework.Controls.MetroTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rtbDebug = new System.Windows.Forms.RichTextBox();
+            this.chatTabPage = new System.Windows.Forms.TabPage();
+            this.rtbChat = new System.Windows.Forms.RichTextBox();
+            this.partyTabPage = new System.Windows.Forms.TabPage();
+            this.rtbParty = new System.Windows.Forms.RichTextBox();
+            this.sayTabPage = new System.Windows.Forms.TabPage();
+            this.rtbSay = new System.Windows.Forms.RichTextBox();
+            this.shellTabPage = new System.Windows.Forms.TabPage();
+            this.rtbShell = new System.Windows.Forms.RichTextBox();
+            this.ShoutTabPage = new System.Windows.Forms.TabPage();
+            this.rtbShout = new System.Windows.Forms.RichTextBox();
+            this.tellTabPage = new System.Windows.Forms.TabPage();
+            this.rtbTell = new System.Windows.Forms.RichTextBox();
+            this.YellTabPage = new System.Windows.Forms.TabPage();
+            this.rtbYell = new System.Windows.Forms.RichTextBox();
+            this.TextToFFxiTB = new MetroFramework.Controls.MetroTextBox();
             this.HunterTabPage = new MetroFramework.Controls.MetroTabPage();
             this.tabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.TargetTabPage = new MetroFramework.Controls.MetroTabPage();
@@ -227,25 +247,6 @@
             this.LoadWayPointsBtn = new System.Windows.Forms.ToolStripButton();
             this.SaveWayPointsBtn = new System.Windows.Forms.ToolStripButton();
             this.WPLoadedLB = new System.Windows.Forms.ToolStripLabel();
-            this.ChatTab = new MetroFramework.Controls.MetroTabPage();
-            this.tabControl3 = new MetroFramework.Controls.MetroTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.rtbDebug = new System.Windows.Forms.RichTextBox();
-            this.chatTabPage = new System.Windows.Forms.TabPage();
-            this.rtbChat = new System.Windows.Forms.RichTextBox();
-            this.partyTabPage = new System.Windows.Forms.TabPage();
-            this.rtbParty = new System.Windows.Forms.RichTextBox();
-            this.sayTabPage = new System.Windows.Forms.TabPage();
-            this.rtbSay = new System.Windows.Forms.RichTextBox();
-            this.shellTabPage = new System.Windows.Forms.TabPage();
-            this.rtbShell = new System.Windows.Forms.RichTextBox();
-            this.ShoutTabPage = new System.Windows.Forms.TabPage();
-            this.rtbShout = new System.Windows.Forms.RichTextBox();
-            this.tellTabPage = new System.Windows.Forms.TabPage();
-            this.rtbTell = new System.Windows.Forms.RichTextBox();
-            this.YellTabPage = new System.Windows.Forms.TabPage();
-            this.rtbYell = new System.Windows.Forms.RichTextBox();
-            this.TextToFFxiTB = new MetroFramework.Controls.MetroTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -255,10 +256,27 @@
             this.ChatTimer = new System.Windows.Forms.Timer(this.components);
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.NaviTimer = new System.Windows.Forms.Timer(this.components);
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.FailedUPdown = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.IdleDelayValue = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.wsTabPage.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.AboutTabPage.SuspendLayout();
+            this.ChatTab.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.chatTabPage.SuspendLayout();
+            this.partyTabPage.SuspendLayout();
+            this.sayTabPage.SuspendLayout();
+            this.shellTabPage.SuspendLayout();
+            this.ShoutTabPage.SuspendLayout();
+            this.tellTabPage.SuspendLayout();
+            this.YellTabPage.SuspendLayout();
             this.HunterTabPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TargetTabPage.SuspendLayout();
@@ -281,17 +299,10 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.NavTabPage.SuspendLayout();
             this.NavToolStrip.SuspendLayout();
-            this.ChatTab.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.chatTabPage.SuspendLayout();
-            this.partyTabPage.SuspendLayout();
-            this.sayTabPage.SuspendLayout();
-            this.shellTabPage.SuspendLayout();
-            this.ShoutTabPage.SuspendLayout();
-            this.tellTabPage.SuspendLayout();
-            this.YellTabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FailedUPdown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdleDelayValue)).BeginInit();
             this.SuspendLayout();
             // 
             // Tplbl
@@ -457,7 +468,7 @@
             this.wsTabPage.Location = new System.Drawing.Point(4, 4);
             this.wsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.wsTabPage.Name = "wsTabPage";
-            this.wsTabPage.Size = new System.Drawing.Size(182, 0);
+            this.wsTabPage.Size = new System.Drawing.Size(783, 252);
             this.wsTabPage.TabIndex = 3;
             this.wsTabPage.Text = "WeaponSkill";
             // 
@@ -485,13 +496,13 @@
             // 
             this.metroTabControl1.CausesValidation = false;
             this.metroTabControl1.Controls.Add(this.AboutTabPage);
-            this.metroTabControl1.Controls.Add(this.ChatTab);
             this.metroTabControl1.Controls.Add(this.HunterTabPage);
+            this.metroTabControl1.Controls.Add(this.ChatTab);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(1, 29);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(801, 372);
             this.metroTabControl1.TabIndex = 0;
             // 
@@ -596,6 +607,298 @@
             this.aboutname.Text = "Servus ";
             this.aboutname.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // ChatTab
+            // 
+            this.ChatTab.BackColor = System.Drawing.Color.Transparent;
+            this.ChatTab.CausesValidation = false;
+            this.ChatTab.Controls.Add(this.tabControl3);
+            this.ChatTab.Controls.Add(this.TextToFFxiTB);
+            this.ChatTab.HorizontalScrollbar = true;
+            this.ChatTab.HorizontalScrollbarBarColor = true;
+            this.ChatTab.HorizontalScrollbarSize = 12;
+            this.ChatTab.Location = new System.Drawing.Point(4, 39);
+            this.ChatTab.Margin = new System.Windows.Forms.Padding(0);
+            this.ChatTab.Name = "ChatTab";
+            this.ChatTab.Padding = new System.Windows.Forms.Padding(1);
+            this.ChatTab.Size = new System.Drawing.Size(793, 329);
+            this.ChatTab.TabIndex = 0;
+            this.ChatTab.Text = "Chat";
+            this.ChatTab.VerticalScrollbar = true;
+            this.ChatTab.VerticalScrollbarBarColor = true;
+            this.ChatTab.VerticalScrollbarSize = 13;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl3.CausesValidation = false;
+            this.tabControl3.Controls.Add(this.tabPage1);
+            this.tabControl3.Controls.Add(this.chatTabPage);
+            this.tabControl3.Controls.Add(this.partyTabPage);
+            this.tabControl3.Controls.Add(this.sayTabPage);
+            this.tabControl3.Controls.Add(this.shellTabPage);
+            this.tabControl3.Controls.Add(this.ShoutTabPage);
+            this.tabControl3.Controls.Add(this.tellTabPage);
+            this.tabControl3.Controls.Add(this.YellTabPage);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(1, 1);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl3.Multiline = true;
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 7;
+            this.tabControl3.Size = new System.Drawing.Size(791, 302);
+            this.tabControl3.TabIndex = 12;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.CausesValidation = false;
+            this.tabPage1.Controls.Add(this.rtbDebug);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(182, 0);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Debug";
+            // 
+            // rtbDebug
+            // 
+            this.rtbDebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbDebug.CausesValidation = false;
+            this.rtbDebug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbDebug.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbDebug.ForeColor = System.Drawing.Color.Yellow;
+            this.rtbDebug.Location = new System.Drawing.Point(0, 0);
+            this.rtbDebug.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbDebug.Name = "rtbDebug";
+            this.rtbDebug.ReadOnly = true;
+            this.rtbDebug.Size = new System.Drawing.Size(182, 0);
+            this.rtbDebug.TabIndex = 0;
+            this.rtbDebug.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbDebug, "Double click to save Debug log");
+            this.rtbDebug.DoubleClick += new System.EventHandler(this.RtbDebug_DoubleClick);
+            // 
+            // chatTabPage
+            // 
+            this.chatTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.chatTabPage.CausesValidation = false;
+            this.chatTabPage.Controls.Add(this.rtbChat);
+            this.chatTabPage.Location = new System.Drawing.Point(4, 4);
+            this.chatTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.chatTabPage.Name = "chatTabPage";
+            this.chatTabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.chatTabPage.Size = new System.Drawing.Size(182, 0);
+            this.chatTabPage.TabIndex = 0;
+            this.chatTabPage.Text = "All";
+            // 
+            // rtbChat
+            // 
+            this.rtbChat.BackColor = System.Drawing.Color.Black;
+            this.rtbChat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbChat.CausesValidation = false;
+            this.rtbChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbChat.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbChat.ForeColor = System.Drawing.Color.White;
+            this.rtbChat.Location = new System.Drawing.Point(4, 4);
+            this.rtbChat.Margin = new System.Windows.Forms.Padding(0);
+            this.rtbChat.Name = "rtbChat";
+            this.rtbChat.ReadOnly = true;
+            this.rtbChat.Size = new System.Drawing.Size(174, 0);
+            this.rtbChat.TabIndex = 0;
+            this.rtbChat.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbChat, "Double click to save All log");
+            this.rtbChat.DoubleClick += new System.EventHandler(this.RtbChat_DoubleClick);
+            // 
+            // partyTabPage
+            // 
+            this.partyTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.partyTabPage.CausesValidation = false;
+            this.partyTabPage.Controls.Add(this.rtbParty);
+            this.partyTabPage.Location = new System.Drawing.Point(4, 4);
+            this.partyTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.partyTabPage.Name = "partyTabPage";
+            this.partyTabPage.Size = new System.Drawing.Size(182, 0);
+            this.partyTabPage.TabIndex = 3;
+            this.partyTabPage.Text = "Party";
+            // 
+            // rtbParty
+            // 
+            this.rtbParty.BackColor = System.Drawing.Color.Black;
+            this.rtbParty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbParty.CausesValidation = false;
+            this.rtbParty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbParty.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbParty.Location = new System.Drawing.Point(0, 0);
+            this.rtbParty.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbParty.Name = "rtbParty";
+            this.rtbParty.ReadOnly = true;
+            this.rtbParty.Size = new System.Drawing.Size(182, 0);
+            this.rtbParty.TabIndex = 2;
+            this.rtbParty.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbParty, "Double click to save Party log");
+            this.rtbParty.DoubleClick += new System.EventHandler(this.RtbParty_DoubleClick);
+            // 
+            // sayTabPage
+            // 
+            this.sayTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.sayTabPage.CausesValidation = false;
+            this.sayTabPage.Controls.Add(this.rtbSay);
+            this.sayTabPage.Location = new System.Drawing.Point(4, 4);
+            this.sayTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.sayTabPage.Name = "sayTabPage";
+            this.sayTabPage.Size = new System.Drawing.Size(182, 0);
+            this.sayTabPage.TabIndex = 2;
+            this.sayTabPage.Text = "Say";
+            // 
+            // rtbSay
+            // 
+            this.rtbSay.BackColor = System.Drawing.Color.Black;
+            this.rtbSay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbSay.CausesValidation = false;
+            this.rtbSay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbSay.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbSay.Location = new System.Drawing.Point(0, 0);
+            this.rtbSay.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbSay.Name = "rtbSay";
+            this.rtbSay.ReadOnly = true;
+            this.rtbSay.Size = new System.Drawing.Size(182, 0);
+            this.rtbSay.TabIndex = 1;
+            this.rtbSay.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbSay, "Double click to save Say log");
+            this.rtbSay.DoubleClick += new System.EventHandler(this.RtbSay_DoubleClick);
+            // 
+            // shellTabPage
+            // 
+            this.shellTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.shellTabPage.CausesValidation = false;
+            this.shellTabPage.Controls.Add(this.rtbShell);
+            this.shellTabPage.Location = new System.Drawing.Point(4, 4);
+            this.shellTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.shellTabPage.Name = "shellTabPage";
+            this.shellTabPage.Size = new System.Drawing.Size(182, 0);
+            this.shellTabPage.TabIndex = 4;
+            this.shellTabPage.Text = "Shell";
+            // 
+            // rtbShell
+            // 
+            this.rtbShell.BackColor = System.Drawing.Color.Black;
+            this.rtbShell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbShell.CausesValidation = false;
+            this.rtbShell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbShell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbShell.Location = new System.Drawing.Point(0, 0);
+            this.rtbShell.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbShell.Name = "rtbShell";
+            this.rtbShell.ReadOnly = true;
+            this.rtbShell.Size = new System.Drawing.Size(182, 0);
+            this.rtbShell.TabIndex = 3;
+            this.rtbShell.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbShell, "Double click to save Shell log");
+            this.rtbShell.DoubleClick += new System.EventHandler(this.RtbShell_DoubleClick);
+            // 
+            // ShoutTabPage
+            // 
+            this.ShoutTabPage.CausesValidation = false;
+            this.ShoutTabPage.Controls.Add(this.rtbShout);
+            this.ShoutTabPage.Location = new System.Drawing.Point(4, 4);
+            this.ShoutTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ShoutTabPage.Name = "ShoutTabPage";
+            this.ShoutTabPage.Size = new System.Drawing.Size(182, 0);
+            this.ShoutTabPage.TabIndex = 8;
+            this.ShoutTabPage.Text = "Shout";
+            this.ShoutTabPage.UseVisualStyleBackColor = true;
+            // 
+            // rtbShout
+            // 
+            this.rtbShout.BackColor = System.Drawing.Color.Black;
+            this.rtbShout.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbShout.CausesValidation = false;
+            this.rtbShout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbShout.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbShout.Location = new System.Drawing.Point(0, 0);
+            this.rtbShout.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbShout.Name = "rtbShout";
+            this.rtbShout.ReadOnly = true;
+            this.rtbShout.Size = new System.Drawing.Size(182, 0);
+            this.rtbShout.TabIndex = 2;
+            this.rtbShout.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbShout, "Double click to save Shout  log");
+            this.rtbShout.DoubleClick += new System.EventHandler(this.RtbShout_DoubleClick);
+            // 
+            // tellTabPage
+            // 
+            this.tellTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.tellTabPage.CausesValidation = false;
+            this.tellTabPage.Controls.Add(this.rtbTell);
+            this.tellTabPage.Location = new System.Drawing.Point(4, 4);
+            this.tellTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.tellTabPage.Name = "tellTabPage";
+            this.tellTabPage.Size = new System.Drawing.Size(182, 0);
+            this.tellTabPage.TabIndex = 1;
+            this.tellTabPage.Text = "Tell";
+            // 
+            // rtbTell
+            // 
+            this.rtbTell.BackColor = System.Drawing.Color.Black;
+            this.rtbTell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTell.CausesValidation = false;
+            this.rtbTell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbTell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbTell.Location = new System.Drawing.Point(0, 0);
+            this.rtbTell.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbTell.Name = "rtbTell";
+            this.rtbTell.ReadOnly = true;
+            this.rtbTell.Size = new System.Drawing.Size(182, 0);
+            this.rtbTell.TabIndex = 0;
+            this.rtbTell.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbTell, "Double click to save Tell log");
+            this.rtbTell.DoubleClick += new System.EventHandler(this.RtbTell_DoubleClick);
+            // 
+            // YellTabPage
+            // 
+            this.YellTabPage.CausesValidation = false;
+            this.YellTabPage.Controls.Add(this.rtbYell);
+            this.YellTabPage.Location = new System.Drawing.Point(4, 4);
+            this.YellTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.YellTabPage.Name = "YellTabPage";
+            this.YellTabPage.Size = new System.Drawing.Size(783, 259);
+            this.YellTabPage.TabIndex = 6;
+            this.YellTabPage.Text = "Yell";
+            this.YellTabPage.UseVisualStyleBackColor = true;
+            // 
+            // rtbYell
+            // 
+            this.rtbYell.BackColor = System.Drawing.Color.Black;
+            this.rtbYell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbYell.CausesValidation = false;
+            this.rtbYell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbYell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbYell.Location = new System.Drawing.Point(0, 0);
+            this.rtbYell.Margin = new System.Windows.Forms.Padding(4);
+            this.rtbYell.Name = "rtbYell";
+            this.rtbYell.ReadOnly = true;
+            this.rtbYell.Size = new System.Drawing.Size(783, 259);
+            this.rtbYell.TabIndex = 1;
+            this.rtbYell.Text = "";
+            this.metroToolTip1.SetToolTip(this.rtbYell, "Double click to save Yell log");
+            this.rtbYell.DoubleClick += new System.EventHandler(this.RtbYell_DoubleClick);
+            // 
+            // TextToFFxiTB
+            // 
+            this.TextToFFxiTB.BackColor = System.Drawing.Color.SteelBlue;
+            this.TextToFFxiTB.CausesValidation = false;
+            this.TextToFFxiTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TextToFFxiTB.ForeColor = System.Drawing.Color.FloralWhite;
+            this.TextToFFxiTB.Location = new System.Drawing.Point(1, 303);
+            this.TextToFFxiTB.Margin = new System.Windows.Forms.Padding(0);
+            this.TextToFFxiTB.Name = "TextToFFxiTB";
+            this.TextToFFxiTB.Size = new System.Drawing.Size(791, 25);
+            this.TextToFFxiTB.TabIndex = 13;
+            this.TextToFFxiTB.Text = "Send text to FFxi here, just type what you want to say & hit enter";
+            this.metroToolTip1.SetToolTip(this.TextToFFxiTB, "Send text to FFxi here.");
+            this.TextToFFxiTB.Click += new System.EventHandler(this.TextToFFxiTB_Click);
+            this.TextToFFxiTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextToFFxiTB_KeyPress);
+            // 
             // HunterTabPage
             // 
             this.HunterTabPage.BackColor = System.Drawing.Color.Transparent;
@@ -629,7 +932,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 6;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(791, 295);
             this.tabControl1.TabIndex = 9;
             // 
@@ -649,7 +952,7 @@
             this.TargetTabPage.HorizontalScrollbarSize = 12;
             this.TargetTabPage.Location = new System.Drawing.Point(4, 4);
             this.TargetTabPage.Name = "TargetTabPage";
-            this.TargetTabPage.Size = new System.Drawing.Size(182, 0);
+            this.TargetTabPage.Size = new System.Drawing.Size(783, 252);
             this.TargetTabPage.TabIndex = 1;
             this.TargetTabPage.Text = "Targets";
             this.TargetTabPage.VerticalScrollbarBarColor = true;
@@ -699,7 +1002,7 @@
             this.NpcLB.Location = new System.Drawing.Point(0, 0);
             this.NpcLB.Margin = new System.Windows.Forms.Padding(4);
             this.NpcLB.Name = "NpcLB";
-            this.NpcLB.Size = new System.Drawing.Size(212, 0);
+            this.NpcLB.Size = new System.Drawing.Size(212, 252);
             this.NpcLB.TabIndex = 6;
             this.metroToolTip1.SetToolTip(this.NpcLB, "Double click to add selected target or select then click add target.");
             this.NpcLB.DoubleClick += new System.EventHandler(this.NpcLB_DoubleClick);
@@ -747,7 +1050,7 @@
             this.SettingsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.SettingsTabPage.Name = "SettingsTabPage";
             this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.SettingsTabPage.Size = new System.Drawing.Size(182, 0);
+            this.SettingsTabPage.Size = new System.Drawing.Size(783, 252);
             this.SettingsTabPage.TabIndex = 2;
             this.SettingsTabPage.Text = "Settings";
             this.SettingsTabPage.UseVisualStyleBackColor = true;
@@ -766,8 +1069,8 @@
             this.metroTabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl2.Multiline = true;
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 1;
-            this.metroTabControl2.Size = new System.Drawing.Size(174, 0);
+            this.metroTabControl2.SelectedIndex = 3;
+            this.metroTabControl2.Size = new System.Drawing.Size(775, 244);
             this.metroTabControl2.TabIndex = 26;
             // 
             // metroTabPage1
@@ -784,7 +1087,7 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.metroTabPage1.Size = new System.Drawing.Size(176, 0);
+            this.metroTabPage1.Size = new System.Drawing.Size(767, 201);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Pull";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -878,7 +1181,7 @@
             this.metroTabPage2.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.metroTabPage2.Size = new System.Drawing.Size(166, 0);
+            this.metroTabPage2.Size = new System.Drawing.Size(767, 201);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Resting";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -998,7 +1301,7 @@
             this.metroTabPage3.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage3.Name = "metroTabPage3";
             this.metroTabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.metroTabPage3.Size = new System.Drawing.Size(176, 0);
+            this.metroTabPage3.Size = new System.Drawing.Size(767, 201);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Raise?";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -1067,12 +1370,15 @@
             // metroTabPage4
             // 
             this.metroTabPage4.BackColor = System.Drawing.Color.Transparent;
+            this.metroTabPage4.Controls.Add(this.metroLabel11);
+            this.metroTabPage4.Controls.Add(this.IdleDelayValue);
+            this.metroTabPage4.Controls.Add(this.metroLabel3);
             this.metroTabPage4.Controls.Add(this.groupBox1);
             this.metroTabPage4.Controls.Add(this.StopOnTellCB);
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(176, 0);
+            this.metroTabPage4.Size = new System.Drawing.Size(767, 201);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Misc";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
@@ -1197,7 +1503,7 @@
             // StopOnTellCB
             // 
             this.StopOnTellCB.AutoSize = true;
-            this.StopOnTellCB.Location = new System.Drawing.Point(318, 25);
+            this.StopOnTellCB.Location = new System.Drawing.Point(286, 13);
             this.StopOnTellCB.Name = "StopOnTellCB";
             this.StopOnTellCB.Size = new System.Drawing.Size(91, 17);
             this.StopOnTellCB.TabIndex = 2;
@@ -1214,7 +1520,7 @@
             this.JaTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.JaTabPage.Name = "JaTabPage";
             this.JaTabPage.Padding = new System.Windows.Forms.Padding(1);
-            this.JaTabPage.Size = new System.Drawing.Size(182, 0);
+            this.JaTabPage.Size = new System.Drawing.Size(783, 252);
             this.JaTabPage.TabIndex = 4;
             this.JaTabPage.Text = "JobAbilities";
             this.JaTabPage.VerticalScrollbarBarColor = true;
@@ -1229,7 +1535,7 @@
             this.metroTabControl3.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl3.Name = "metroTabControl3";
             this.metroTabControl3.SelectedIndex = 0;
-            this.metroTabControl3.Size = new System.Drawing.Size(180, 0);
+            this.metroTabControl3.Size = new System.Drawing.Size(781, 250);
             this.metroTabControl3.TabIndex = 2;
             // 
             // KeepActiveTabPage
@@ -1246,7 +1552,7 @@
             this.KeepActiveTabPage.Location = new System.Drawing.Point(4, 4);
             this.KeepActiveTabPage.Name = "KeepActiveTabPage";
             this.KeepActiveTabPage.Padding = new System.Windows.Forms.Padding(1);
-            this.KeepActiveTabPage.Size = new System.Drawing.Size(172, 0);
+            this.KeepActiveTabPage.Size = new System.Drawing.Size(773, 207);
             this.KeepActiveTabPage.TabIndex = 0;
             this.KeepActiveTabPage.Text = "KeepActive";
             this.KeepActiveTabPage.VerticalScrollbarBarColor = true;
@@ -1476,7 +1782,7 @@
             this.DebuffTabPage.HorizontalScrollbarBarColor = true;
             this.DebuffTabPage.Location = new System.Drawing.Point(4, 4);
             this.DebuffTabPage.Name = "DebuffTabPage";
-            this.DebuffTabPage.Size = new System.Drawing.Size(182, 0);
+            this.DebuffTabPage.Size = new System.Drawing.Size(783, 252);
             this.DebuffTabPage.TabIndex = 5;
             this.DebuffTabPage.Text = "Debuff";
             this.DebuffTabPage.VerticalScrollbarBarColor = true;
@@ -1491,7 +1797,7 @@
             this.plDebuffWrapperPanel.Location = new System.Drawing.Point(0, 0);
             this.plDebuffWrapperPanel.Margin = new System.Windows.Forms.Padding(4);
             this.plDebuffWrapperPanel.Name = "plDebuffWrapperPanel";
-            this.plDebuffWrapperPanel.Size = new System.Drawing.Size(198, 0);
+            this.plDebuffWrapperPanel.Size = new System.Drawing.Size(198, 252);
             this.plDebuffWrapperPanel.TabIndex = 11;
             // 
             // flowLayoutPanel3
@@ -1557,6 +1863,7 @@
             this.AttackDownCB.TabIndex = 8;
             this.AttackDownCB.Text = "Attack Down";
             this.AttackDownCB.UseVisualStyleBackColor = true;
+            this.AttackDownCB.CheckedChanged += new System.EventHandler(this.AttackDownCB_CheckedChanged);
             // 
             // AddleCB
             // 
@@ -1569,6 +1876,7 @@
             this.AddleCB.TabIndex = 9;
             this.AddleCB.Text = "Addle";
             this.AddleCB.UseVisualStyleBackColor = true;
+            this.AddleCB.CheckedChanged += new System.EventHandler(this.AddleCB_CheckedChanged);
             // 
             // AccuracyDownCB
             // 
@@ -1581,6 +1889,7 @@
             this.AccuracyDownCB.TabIndex = 6;
             this.AccuracyDownCB.Text = "Accuracy Down";
             this.AccuracyDownCB.UseVisualStyleBackColor = true;
+            this.AccuracyDownCB.CheckedChanged += new System.EventHandler(this.AccuracyDownCB_CheckedChanged);
             // 
             // AgiDownCB
             // 
@@ -1593,6 +1902,7 @@
             this.AgiDownCB.TabIndex = 7;
             this.AgiDownCB.Text = "AGI Down";
             this.AgiDownCB.UseVisualStyleBackColor = true;
+            this.AgiDownCB.CheckedChanged += new System.EventHandler(this.AgiDownCB_CheckedChanged);
             // 
             // BlindnessCB
             // 
@@ -1605,6 +1915,7 @@
             this.BlindnessCB.TabIndex = 4;
             this.BlindnessCB.Text = "Blindness      ";
             this.BlindnessCB.UseVisualStyleBackColor = true;
+            this.BlindnessCB.CheckedChanged += new System.EventHandler(this.BlindnessCB_CheckedChanged);
             // 
             // BurnCB
             // 
@@ -1617,6 +1928,7 @@
             this.BurnCB.TabIndex = 3;
             this.BurnCB.Text = "Burn";
             this.BurnCB.UseVisualStyleBackColor = true;
+            this.BurnCB.CheckedChanged += new System.EventHandler(this.BurnCB_CheckedChanged);
             // 
             // BindCB
             // 
@@ -1629,6 +1941,7 @@
             this.BindCB.TabIndex = 2;
             this.BindCB.Text = "Bind         ";
             this.BindCB.UseVisualStyleBackColor = true;
+            this.BindCB.CheckedChanged += new System.EventHandler(this.BindCB_CheckedChanged);
             // 
             // BioCB
             // 
@@ -1641,6 +1954,7 @@
             this.BioCB.TabIndex = 1;
             this.BioCB.Text = "Bio        ";
             this.BioCB.UseVisualStyleBackColor = true;
+            this.BioCB.CheckedChanged += new System.EventHandler(this.BioCB_CheckedChanged);
             // 
             // BaneCB
             // 
@@ -1653,6 +1967,7 @@
             this.BaneCB.TabIndex = 5;
             this.BaneCB.Text = "Bane     ";
             this.BaneCB.UseVisualStyleBackColor = true;
+            this.BaneCB.CheckedChanged += new System.EventHandler(this.BaneCB_CheckedChanged);
             // 
             // ChokeCB
             // 
@@ -1665,6 +1980,7 @@
             this.ChokeCB.TabIndex = 15;
             this.ChokeCB.Text = "Choke";
             this.ChokeCB.UseVisualStyleBackColor = true;
+            this.ChokeCB.CheckedChanged += new System.EventHandler(this.ChokeCB_CheckedChanged);
             // 
             // ChrDownCB
             // 
@@ -1677,6 +1993,7 @@
             this.ChrDownCB.TabIndex = 16;
             this.ChrDownCB.Text = "CHR Down";
             this.ChrDownCB.UseVisualStyleBackColor = true;
+            this.ChrDownCB.CheckedChanged += new System.EventHandler(this.ChrDownCB_CheckedChanged);
             // 
             // CurseCB
             // 
@@ -1689,6 +2006,7 @@
             this.CurseCB.TabIndex = 18;
             this.CurseCB.Text = "Curse";
             this.CurseCB.UseVisualStyleBackColor = true;
+            this.CurseCB.CheckedChanged += new System.EventHandler(this.CurseCB_CheckedChanged);
             // 
             // Curse2CB
             // 
@@ -1701,6 +2019,7 @@
             this.Curse2CB.TabIndex = 17;
             this.Curse2CB.Text = "Curse2     ";
             this.Curse2CB.UseVisualStyleBackColor = true;
+            this.Curse2CB.CheckedChanged += new System.EventHandler(this.Curse2CB_CheckedChanged);
             // 
             // DrownCB
             // 
@@ -1713,6 +2032,7 @@
             this.DrownCB.TabIndex = 12;
             this.DrownCB.Text = "Drown       ";
             this.DrownCB.UseVisualStyleBackColor = true;
+            this.DrownCB.CheckedChanged += new System.EventHandler(this.DrownCB_CheckedChanged);
             // 
             // DoomCB
             // 
@@ -1725,6 +2045,7 @@
             this.DoomCB.TabIndex = 13;
             this.DoomCB.Text = "Doom";
             this.DoomCB.UseVisualStyleBackColor = true;
+            this.DoomCB.CheckedChanged += new System.EventHandler(this.DoomCB_CheckedChanged);
             // 
             // DiaCB
             // 
@@ -1737,6 +2058,7 @@
             this.DiaCB.TabIndex = 10;
             this.DiaCB.Text = "Dia            ";
             this.DiaCB.UseVisualStyleBackColor = true;
+            this.DiaCB.CheckedChanged += new System.EventHandler(this.DiaCB_CheckedChanged);
             // 
             // DefenseDownCB
             // 
@@ -1749,6 +2071,7 @@
             this.DefenseDownCB.TabIndex = 11;
             this.DefenseDownCB.Text = "Defense Down";
             this.DefenseDownCB.UseVisualStyleBackColor = true;
+            this.DefenseDownCB.CheckedChanged += new System.EventHandler(this.DefenseDownCB_CheckedChanged);
             // 
             // DexDownCB
             // 
@@ -1761,6 +2084,7 @@
             this.DexDownCB.TabIndex = 14;
             this.DexDownCB.Text = "DEX Down";
             this.DexDownCB.UseVisualStyleBackColor = true;
+            this.DexDownCB.CheckedChanged += new System.EventHandler(this.DexDownCB_CheckedChanged);
             // 
             // ElegyCB
             // 
@@ -1773,6 +2097,7 @@
             this.ElegyCB.TabIndex = 0;
             this.ElegyCB.Text = "Elegy";
             this.ElegyCB.UseVisualStyleBackColor = true;
+            this.ElegyCB.CheckedChanged += new System.EventHandler(this.ElegyCB_CheckedChanged);
             // 
             // EvasionDownCB
             // 
@@ -1785,6 +2110,7 @@
             this.EvasionDownCB.TabIndex = 0;
             this.EvasionDownCB.Text = "Evasion Down";
             this.EvasionDownCB.UseVisualStyleBackColor = true;
+            this.EvasionDownCB.CheckedChanged += new System.EventHandler(this.EvasionDownCB_CheckedChanged);
             // 
             // FlashCB
             // 
@@ -1797,6 +2123,7 @@
             this.FlashCB.TabIndex = 0;
             this.FlashCB.Text = "Flash           ";
             this.FlashCB.UseVisualStyleBackColor = true;
+            this.FlashCB.CheckedChanged += new System.EventHandler(this.FlashCB_CheckedChanged);
             // 
             // FrostCB
             // 
@@ -1809,6 +2136,7 @@
             this.FrostCB.TabIndex = 0;
             this.FrostCB.Text = "Frost";
             this.FrostCB.UseVisualStyleBackColor = true;
+            this.FrostCB.CheckedChanged += new System.EventHandler(this.FrostCB_CheckedChanged);
             // 
             // HelixCB
             // 
@@ -1821,6 +2149,7 @@
             this.HelixCB.TabIndex = 0;
             this.HelixCB.Text = "Helix         ";
             this.HelixCB.UseVisualStyleBackColor = true;
+            this.HelixCB.CheckedChanged += new System.EventHandler(this.HelixCB_CheckedChanged);
             // 
             // IntDownCB
             // 
@@ -1833,6 +2162,7 @@
             this.IntDownCB.TabIndex = 0;
             this.IntDownCB.Text = "INT Down";
             this.IntDownCB.UseVisualStyleBackColor = true;
+            this.IntDownCB.CheckedChanged += new System.EventHandler(this.IntDownCB_CheckedChanged);
             // 
             // MndDownCB
             // 
@@ -1845,6 +2175,7 @@
             this.MndDownCB.TabIndex = 0;
             this.MndDownCB.Text = "MND Down";
             this.MndDownCB.UseVisualStyleBackColor = true;
+            this.MndDownCB.CheckedChanged += new System.EventHandler(this.MndDownCB_CheckedChanged);
             // 
             // MagicAccDownCB
             // 
@@ -1857,6 +2188,7 @@
             this.MagicAccDownCB.TabIndex = 0;
             this.MagicAccDownCB.Text = "Magic Acc Down";
             this.MagicAccDownCB.UseVisualStyleBackColor = true;
+            this.MagicAccDownCB.CheckedChanged += new System.EventHandler(this.MagicAccDownCB_CheckedChanged);
             // 
             // MagicAtkDownCB
             // 
@@ -1869,6 +2201,7 @@
             this.MagicAtkDownCB.TabIndex = 0;
             this.MagicAtkDownCB.Text = "Magic Atk Down";
             this.MagicAtkDownCB.UseVisualStyleBackColor = true;
+            this.MagicAtkDownCB.CheckedChanged += new System.EventHandler(this.MagicAtkDownCB_CheckedChanged);
             // 
             // MaxHpDownCB
             // 
@@ -1881,6 +2214,7 @@
             this.MaxHpDownCB.TabIndex = 0;
             this.MaxHpDownCB.Text = "Max HP Down";
             this.MaxHpDownCB.UseVisualStyleBackColor = true;
+            this.MaxHpDownCB.CheckedChanged += new System.EventHandler(this.MaxHpDownCB_CheckedChanged);
             // 
             // MaxTpDownCB
             // 
@@ -1893,6 +2227,7 @@
             this.MaxTpDownCB.TabIndex = 0;
             this.MaxTpDownCB.Text = "Max TP Down";
             this.MaxTpDownCB.UseVisualStyleBackColor = true;
+            this.MaxTpDownCB.CheckedChanged += new System.EventHandler(this.MaxTpDownCB_CheckedChanged);
             // 
             // MaxMpDownCB
             // 
@@ -1905,6 +2240,7 @@
             this.MaxMpDownCB.TabIndex = 0;
             this.MaxMpDownCB.Text = "Max MP Down";
             this.MaxMpDownCB.UseVisualStyleBackColor = true;
+            this.MaxMpDownCB.CheckedChanged += new System.EventHandler(this.MaxMpDownCB_CheckedChanged);
             // 
             // ParalysisCB
             // 
@@ -1917,6 +2253,7 @@
             this.ParalysisCB.TabIndex = 0;
             this.ParalysisCB.Text = "Paralysis";
             this.ParalysisCB.UseVisualStyleBackColor = true;
+            this.ParalysisCB.CheckedChanged += new System.EventHandler(this.ParalysisCB_CheckedChanged);
             // 
             // PlagueCB
             // 
@@ -1929,6 +2266,7 @@
             this.PlagueCB.TabIndex = 0;
             this.PlagueCB.Text = "Plague        ";
             this.PlagueCB.UseVisualStyleBackColor = true;
+            this.PlagueCB.CheckedChanged += new System.EventHandler(this.PlagueCB_CheckedChanged);
             // 
             // PoisonCB
             // 
@@ -1941,6 +2279,7 @@
             this.PoisonCB.TabIndex = 0;
             this.PoisonCB.Text = "Poison";
             this.PoisonCB.UseVisualStyleBackColor = true;
+            this.PoisonCB.CheckedChanged += new System.EventHandler(this.PoisonCB_CheckedChanged);
             // 
             // RaspCB
             // 
@@ -1953,6 +2292,7 @@
             this.RaspCB.TabIndex = 0;
             this.RaspCB.Text = "Rasp       ";
             this.RaspCB.UseVisualStyleBackColor = true;
+            this.RaspCB.CheckedChanged += new System.EventHandler(this.RaspCB_CheckedChanged);
             // 
             // RequiemCB
             // 
@@ -1965,6 +2305,7 @@
             this.RequiemCB.TabIndex = 0;
             this.RequiemCB.Text = "Requiem";
             this.RequiemCB.UseVisualStyleBackColor = true;
+            this.RequiemCB.CheckedChanged += new System.EventHandler(this.RequiemCB_CheckedChanged);
             // 
             // StrDownCB
             // 
@@ -1977,6 +2318,7 @@
             this.StrDownCB.TabIndex = 0;
             this.StrDownCB.Text = "STR Down";
             this.StrDownCB.UseVisualStyleBackColor = true;
+            this.StrDownCB.CheckedChanged += new System.EventHandler(this.StrDownCB_CheckedChanged);
             // 
             // ShockCB
             // 
@@ -1989,6 +2331,7 @@
             this.ShockCB.TabIndex = 0;
             this.ShockCB.Text = "Shock";
             this.ShockCB.UseVisualStyleBackColor = true;
+            this.ShockCB.CheckedChanged += new System.EventHandler(this.ShockCB_CheckedChanged);
             // 
             // SilenceCB
             // 
@@ -2001,6 +2344,7 @@
             this.SilenceCB.TabIndex = 0;
             this.SilenceCB.Text = "Silence       ";
             this.SilenceCB.UseVisualStyleBackColor = true;
+            this.SilenceCB.CheckedChanged += new System.EventHandler(this.SilenceCB_CheckedChanged);
             // 
             // SlowCB
             // 
@@ -2013,6 +2357,7 @@
             this.SlowCB.TabIndex = 0;
             this.SlowCB.Text = "Slow";
             this.SlowCB.UseVisualStyleBackColor = true;
+            this.SlowCB.CheckedChanged += new System.EventHandler(this.SlowCB_CheckedChanged);
             // 
             // ThrenodyCB
             // 
@@ -2025,6 +2370,7 @@
             this.ThrenodyCB.TabIndex = 0;
             this.ThrenodyCB.Text = "Threnody       ";
             this.ThrenodyCB.UseVisualStyleBackColor = true;
+            this.ThrenodyCB.CheckedChanged += new System.EventHandler(this.ThrenodyCB_CheckedChanged);
             // 
             // VitDownCB
             // 
@@ -2037,6 +2383,7 @@
             this.VitDownCB.TabIndex = 0;
             this.VitDownCB.Text = "VIT Down";
             this.VitDownCB.UseVisualStyleBackColor = true;
+            this.VitDownCB.CheckedChanged += new System.EventHandler(this.VitDownCB_CheckedChanged);
             // 
             // WeightCB
             // 
@@ -2049,6 +2396,7 @@
             this.WeightCB.TabIndex = 0;
             this.WeightCB.Text = "Weight";
             this.WeightCB.UseVisualStyleBackColor = true;
+            this.WeightCB.CheckedChanged += new System.EventHandler(this.WeightCB_CheckedChanged);
             // 
             // UseItemForDoomCB
             // 
@@ -2112,7 +2460,7 @@
             this.BuffsTabPage.HorizontalScrollbarBarColor = true;
             this.BuffsTabPage.Location = new System.Drawing.Point(4, 4);
             this.BuffsTabPage.Name = "BuffsTabPage";
-            this.BuffsTabPage.Size = new System.Drawing.Size(182, 0);
+            this.BuffsTabPage.Size = new System.Drawing.Size(783, 252);
             this.BuffsTabPage.TabIndex = 6;
             this.BuffsTabPage.Text = "Buffs";
             this.BuffsTabPage.VerticalScrollbarBarColor = true;
@@ -2127,7 +2475,7 @@
             this.plbuffsWrapperPanel.Location = new System.Drawing.Point(0, 0);
             this.plbuffsWrapperPanel.Margin = new System.Windows.Forms.Padding(4);
             this.plbuffsWrapperPanel.Name = "plbuffsWrapperPanel";
-            this.plbuffsWrapperPanel.Size = new System.Drawing.Size(169, 0);
+            this.plbuffsWrapperPanel.Size = new System.Drawing.Size(168, 252);
             this.plbuffsWrapperPanel.TabIndex = 4;
             // 
             // flowLayoutPanel2
@@ -2188,7 +2536,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(167, 1446);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(145, 1446);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // AquaveilCB
@@ -2201,6 +2549,7 @@
             this.AquaveilCB.TabIndex = 0;
             this.AquaveilCB.Text = "Aquaveil           ";
             this.AquaveilCB.UseVisualStyleBackColor = true;
+            this.AquaveilCB.CheckedChanged += new System.EventHandler(this.AquaveilCB_CheckedChanged);
             // 
             // BlinkCB
             // 
@@ -2212,6 +2561,7 @@
             this.BlinkCB.TabIndex = 1;
             this.BlinkCB.Text = "Blink                   ";
             this.BlinkCB.UseVisualStyleBackColor = true;
+            this.BlinkCB.CheckedChanged += new System.EventHandler(this.BlinkCB_CheckedChanged);
             // 
             // Hhaste
             // 
@@ -2224,6 +2574,7 @@
             this.Hhaste.TabIndex = 41;
             this.Hhaste.Text = "Haste Samba";
             this.Hhaste.UseVisualStyleBackColor = true;
+            this.Hhaste.CheckedChanged += new System.EventHandler(this.Hhaste_CheckedChanged);
             // 
             // HasteCB
             // 
@@ -2235,6 +2586,7 @@
             this.HasteCB.TabIndex = 2;
             this.HasteCB.Text = "Haste";
             this.HasteCB.UseVisualStyleBackColor = true;
+            this.HasteCB.CheckedChanged += new System.EventHandler(this.HasteCB_CheckedChanged);
             // 
             // Haste2CB
             // 
@@ -2246,6 +2598,7 @@
             this.Haste2CB.TabIndex = 5;
             this.Haste2CB.Text = "Haste 2";
             this.Haste2CB.UseVisualStyleBackColor = true;
+            this.Haste2CB.CheckedChanged += new System.EventHandler(this.Haste2CB_CheckedChanged);
             // 
             // PhalanxCB
             // 
@@ -2257,6 +2610,7 @@
             this.PhalanxCB.TabIndex = 3;
             this.PhalanxCB.Text = "Phalanx";
             this.PhalanxCB.UseVisualStyleBackColor = true;
+            this.PhalanxCB.CheckedChanged += new System.EventHandler(this.PhalanxCB_CheckedChanged);
             // 
             // ProtectCB
             // 
@@ -2268,6 +2622,7 @@
             this.ProtectCB.TabIndex = 4;
             this.ProtectCB.Text = "Protect 1";
             this.ProtectCB.UseVisualStyleBackColor = true;
+            this.ProtectCB.CheckedChanged += new System.EventHandler(this.ProtectCB_CheckedChanged);
             // 
             // Protect2CB
             // 
@@ -2279,6 +2634,7 @@
             this.Protect2CB.TabIndex = 5;
             this.Protect2CB.Text = "Protect 2";
             this.Protect2CB.UseVisualStyleBackColor = true;
+            this.Protect2CB.CheckedChanged += new System.EventHandler(this.Protect2CB_CheckedChanged);
             // 
             // Protect3CB
             // 
@@ -2290,6 +2646,7 @@
             this.Protect3CB.TabIndex = 6;
             this.Protect3CB.Text = "Protect 3";
             this.Protect3CB.UseVisualStyleBackColor = true;
+            this.Protect3CB.CheckedChanged += new System.EventHandler(this.Protect3CB_CheckedChanged);
             // 
             // Protect4CB
             // 
@@ -2301,6 +2658,7 @@
             this.Protect4CB.TabIndex = 7;
             this.Protect4CB.Text = "Protect 4";
             this.Protect4CB.UseVisualStyleBackColor = true;
+            this.Protect4CB.CheckedChanged += new System.EventHandler(this.Protect4CB_CheckedChanged);
             // 
             // Protect5CB
             // 
@@ -2312,6 +2670,7 @@
             this.Protect5CB.TabIndex = 8;
             this.Protect5CB.Text = "Protect 5";
             this.Protect5CB.UseVisualStyleBackColor = true;
+            this.Protect5CB.CheckedChanged += new System.EventHandler(this.Protect5CB_CheckedChanged);
             // 
             // Refresh1CB
             // 
@@ -2323,6 +2682,7 @@
             this.Refresh1CB.TabIndex = 9;
             this.Refresh1CB.Text = "Refresh";
             this.Refresh1CB.UseVisualStyleBackColor = true;
+            this.Refresh1CB.CheckedChanged += new System.EventHandler(this.Refresh1CB_CheckedChanged);
             // 
             // Refresh2CB
             // 
@@ -2334,6 +2694,7 @@
             this.Refresh2CB.TabIndex = 10;
             this.Refresh2CB.Text = "Refresh 2";
             this.Refresh2CB.UseVisualStyleBackColor = true;
+            this.Refresh2CB.CheckedChanged += new System.EventHandler(this.Refresh2CB_CheckedChanged);
             // 
             // Refresh3CB
             // 
@@ -2345,6 +2706,7 @@
             this.Refresh3CB.TabIndex = 6;
             this.Refresh3CB.Text = "Refresh 3";
             this.Refresh3CB.UseVisualStyleBackColor = true;
+            this.Refresh3CB.CheckedChanged += new System.EventHandler(this.Refresh3CB_CheckedChanged);
             // 
             // Regen1CB
             // 
@@ -2356,6 +2718,7 @@
             this.Regen1CB.TabIndex = 11;
             this.Regen1CB.Text = "Regen 1 ";
             this.Regen1CB.UseVisualStyleBackColor = true;
+            this.Regen1CB.CheckedChanged += new System.EventHandler(this.Regen1CB_CheckedChanged);
             // 
             // Regen2CB
             // 
@@ -2367,6 +2730,7 @@
             this.Regen2CB.TabIndex = 12;
             this.Regen2CB.Text = "Regen 2";
             this.Regen2CB.UseVisualStyleBackColor = true;
+            this.Regen2CB.CheckedChanged += new System.EventHandler(this.Regen2CB_CheckedChanged);
             // 
             // Regen3CB
             // 
@@ -2378,6 +2742,7 @@
             this.Regen3CB.TabIndex = 13;
             this.Regen3CB.Text = "Regen 3";
             this.Regen3CB.UseVisualStyleBackColor = true;
+            this.Regen3CB.CheckedChanged += new System.EventHandler(this.Regen3CB_CheckedChanged);
             // 
             // Regen4CB
             // 
@@ -2389,6 +2754,7 @@
             this.Regen4CB.TabIndex = 14;
             this.Regen4CB.Text = "Regen 4";
             this.Regen4CB.UseVisualStyleBackColor = true;
+            this.Regen4CB.CheckedChanged += new System.EventHandler(this.Regen4CB_CheckedChanged);
             // 
             // Regen5CB
             // 
@@ -2400,6 +2766,7 @@
             this.Regen5CB.TabIndex = 6;
             this.Regen5CB.Text = "Regen 5";
             this.Regen5CB.UseVisualStyleBackColor = true;
+            this.Regen5CB.CheckedChanged += new System.EventHandler(this.Regen5CB_CheckedChanged);
             // 
             // Reraise1CB
             // 
@@ -2411,6 +2778,7 @@
             this.Reraise1CB.TabIndex = 15;
             this.Reraise1CB.Text = "Reraise 1";
             this.Reraise1CB.UseVisualStyleBackColor = true;
+            this.Reraise1CB.CheckedChanged += new System.EventHandler(this.Reraise1CB_CheckedChanged);
             // 
             // Reraise2CB
             // 
@@ -2422,6 +2790,7 @@
             this.Reraise2CB.TabIndex = 16;
             this.Reraise2CB.Text = "Reraise 2";
             this.Reraise2CB.UseVisualStyleBackColor = true;
+            this.Reraise2CB.CheckedChanged += new System.EventHandler(this.Reraise2CB_CheckedChanged);
             // 
             // Reraise3CB
             // 
@@ -2433,6 +2802,7 @@
             this.Reraise3CB.TabIndex = 17;
             this.Reraise3CB.Text = "Reraise 3";
             this.Reraise3CB.UseVisualStyleBackColor = true;
+            this.Reraise3CB.CheckedChanged += new System.EventHandler(this.Reraise3CB_CheckedChanged);
             // 
             // Reraise4CB
             // 
@@ -2444,6 +2814,7 @@
             this.Reraise4CB.TabIndex = 6;
             this.Reraise4CB.Text = "Reraise 4";
             this.Reraise4CB.UseVisualStyleBackColor = true;
+            this.Reraise4CB.CheckedChanged += new System.EventHandler(this.Reraise4CB_CheckedChanged);
             // 
             // Shell1CB
             // 
@@ -2455,6 +2826,7 @@
             this.Shell1CB.TabIndex = 18;
             this.Shell1CB.Text = "Shell 1";
             this.Shell1CB.UseVisualStyleBackColor = true;
+            this.Shell1CB.CheckedChanged += new System.EventHandler(this.Shell1CB_CheckedChanged);
             // 
             // Shell2CB
             // 
@@ -2466,6 +2838,7 @@
             this.Shell2CB.TabIndex = 19;
             this.Shell2CB.Text = "Shell 2";
             this.Shell2CB.UseVisualStyleBackColor = true;
+            this.Shell2CB.CheckedChanged += new System.EventHandler(this.Shell2CB_CheckedChanged);
             // 
             // Shell3CB
             // 
@@ -2477,6 +2850,7 @@
             this.Shell3CB.TabIndex = 20;
             this.Shell3CB.Text = "Shell 3";
             this.Shell3CB.UseVisualStyleBackColor = true;
+            this.Shell3CB.CheckedChanged += new System.EventHandler(this.Shell3CB_CheckedChanged);
             // 
             // Shell4CB
             // 
@@ -2488,6 +2862,7 @@
             this.Shell4CB.TabIndex = 21;
             this.Shell4CB.Text = "Shell 4";
             this.Shell4CB.UseVisualStyleBackColor = true;
+            this.Shell4CB.CheckedChanged += new System.EventHandler(this.Shell4CB_CheckedChanged);
             // 
             // Shell5CB
             // 
@@ -2499,6 +2874,7 @@
             this.Shell5CB.TabIndex = 22;
             this.Shell5CB.Text = "Shell 5";
             this.Shell5CB.UseVisualStyleBackColor = true;
+            this.Shell5CB.CheckedChanged += new System.EventHandler(this.Shell5CB_CheckedChanged);
             // 
             // StoneskinCB
             // 
@@ -2510,6 +2886,7 @@
             this.StoneskinCB.TabIndex = 23;
             this.StoneskinCB.Text = "Stoneskin";
             this.StoneskinCB.UseVisualStyleBackColor = true;
+            this.StoneskinCB.CheckedChanged += new System.EventHandler(this.StoneskinCB_CheckedChanged);
             // 
             // BlazeSpikesCB
             // 
@@ -2521,6 +2898,7 @@
             this.BlazeSpikesCB.TabIndex = 24;
             this.BlazeSpikesCB.Text = "BlazeSpikes";
             this.BlazeSpikesCB.UseVisualStyleBackColor = true;
+            this.BlazeSpikesCB.CheckedChanged += new System.EventHandler(this.BlazeSpikesCB_CheckedChanged);
             // 
             // IceSPikesCB
             // 
@@ -2532,6 +2910,7 @@
             this.IceSPikesCB.TabIndex = 25;
             this.IceSPikesCB.Text = "IceSpikes";
             this.IceSPikesCB.UseVisualStyleBackColor = true;
+            this.IceSPikesCB.CheckedChanged += new System.EventHandler(this.IceSPikesCB_CheckedChanged);
             // 
             // ShockSpikesCB
             // 
@@ -2543,6 +2922,7 @@
             this.ShockSpikesCB.TabIndex = 26;
             this.ShockSpikesCB.Text = "ShockSpikes";
             this.ShockSpikesCB.UseVisualStyleBackColor = true;
+            this.ShockSpikesCB.CheckedChanged += new System.EventHandler(this.ShockSpikesCB_CheckedChanged);
             // 
             // ShellraCB
             // 
@@ -2554,6 +2934,7 @@
             this.ShellraCB.TabIndex = 27;
             this.ShellraCB.Text = "Shellra";
             this.ShellraCB.UseVisualStyleBackColor = true;
+            this.ShellraCB.CheckedChanged += new System.EventHandler(this.ShellraCB_CheckedChanged);
             // 
             // Shellra2CB
             // 
@@ -2565,6 +2946,7 @@
             this.Shellra2CB.TabIndex = 28;
             this.Shellra2CB.Text = "Shellra 2";
             this.Shellra2CB.UseVisualStyleBackColor = true;
+            this.Shellra2CB.CheckedChanged += new System.EventHandler(this.Shellra2CB_CheckedChanged);
             // 
             // shellra3CB
             // 
@@ -2576,6 +2958,7 @@
             this.shellra3CB.TabIndex = 29;
             this.shellra3CB.Text = "Shellra 3";
             this.shellra3CB.UseVisualStyleBackColor = true;
+            this.shellra3CB.CheckedChanged += new System.EventHandler(this.shellra3CB_CheckedChanged);
             // 
             // Shellra4CB
             // 
@@ -2587,6 +2970,7 @@
             this.Shellra4CB.TabIndex = 30;
             this.Shellra4CB.Text = "Shellra 4";
             this.Shellra4CB.UseVisualStyleBackColor = true;
+            this.Shellra4CB.CheckedChanged += new System.EventHandler(this.Shellra4CB_CheckedChanged);
             // 
             // shellra5CB
             // 
@@ -2598,6 +2982,7 @@
             this.shellra5CB.TabIndex = 31;
             this.shellra5CB.Text = "Shellra 5";
             this.shellra5CB.UseVisualStyleBackColor = true;
+            this.shellra5CB.CheckedChanged += new System.EventHandler(this.shellra5CB_CheckedChanged);
             // 
             // ProtectraCB
             // 
@@ -2609,6 +2994,7 @@
             this.ProtectraCB.TabIndex = 32;
             this.ProtectraCB.Text = "Protectra";
             this.ProtectraCB.UseVisualStyleBackColor = true;
+            this.ProtectraCB.CheckedChanged += new System.EventHandler(this.ProtectraCB_CheckedChanged);
             // 
             // Protectra2CB
             // 
@@ -2620,6 +3006,7 @@
             this.Protectra2CB.TabIndex = 33;
             this.Protectra2CB.Text = "Protectra 2";
             this.Protectra2CB.UseVisualStyleBackColor = true;
+            this.Protectra2CB.CheckedChanged += new System.EventHandler(this.Protectra2CB_CheckedChanged);
             // 
             // protectra3CB
             // 
@@ -2631,6 +3018,7 @@
             this.protectra3CB.TabIndex = 34;
             this.protectra3CB.Text = "Protectra 3";
             this.protectra3CB.UseVisualStyleBackColor = true;
+            this.protectra3CB.CheckedChanged += new System.EventHandler(this.protectra3CB_CheckedChanged);
             // 
             // Protectra4CB
             // 
@@ -2642,6 +3030,7 @@
             this.Protectra4CB.TabIndex = 35;
             this.Protectra4CB.Text = "Protectra 4";
             this.Protectra4CB.UseVisualStyleBackColor = true;
+            this.Protectra4CB.CheckedChanged += new System.EventHandler(this.Protectra4CB_CheckedChanged);
             // 
             // Protectra5CB
             // 
@@ -2653,6 +3042,7 @@
             this.Protectra5CB.TabIndex = 36;
             this.Protectra5CB.Text = "Protectra 5";
             this.Protectra5CB.UseVisualStyleBackColor = true;
+            this.Protectra5CB.CheckedChanged += new System.EventHandler(this.Protectra5CB_CheckedChanged);
             // 
             // BoostAGICB
             // 
@@ -2664,6 +3054,7 @@
             this.BoostAGICB.TabIndex = 5;
             this.BoostAGICB.Text = "Boost-AGI";
             this.BoostAGICB.UseVisualStyleBackColor = true;
+            this.BoostAGICB.CheckedChanged += new System.EventHandler(this.BoostAGICB_CheckedChanged);
             // 
             // BoostCHRCB
             // 
@@ -2675,6 +3066,7 @@
             this.BoostCHRCB.TabIndex = 5;
             this.BoostCHRCB.Text = "Boost-CHR";
             this.BoostCHRCB.UseVisualStyleBackColor = true;
+            this.BoostCHRCB.CheckedChanged += new System.EventHandler(this.BoostCHRCB_CheckedChanged);
             // 
             // BoostDEXCB
             // 
@@ -2686,6 +3078,7 @@
             this.BoostDEXCB.TabIndex = 5;
             this.BoostDEXCB.Text = "Boost-DEX";
             this.BoostDEXCB.UseVisualStyleBackColor = true;
+            this.BoostDEXCB.CheckedChanged += new System.EventHandler(this.BoostDEXCB_CheckedChanged);
             // 
             // BoostINTCB
             // 
@@ -2697,6 +3090,7 @@
             this.BoostINTCB.TabIndex = 5;
             this.BoostINTCB.Text = "Boost-INT";
             this.BoostINTCB.UseVisualStyleBackColor = true;
+            this.BoostINTCB.CheckedChanged += new System.EventHandler(this.BoostINTCB_CheckedChanged);
             // 
             // BoostSTRCB
             // 
@@ -2708,6 +3102,7 @@
             this.BoostSTRCB.TabIndex = 5;
             this.BoostSTRCB.Text = "Boost-STR";
             this.BoostSTRCB.UseVisualStyleBackColor = true;
+            this.BoostSTRCB.CheckedChanged += new System.EventHandler(this.BoostSTRCB_CheckedChanged);
             // 
             // BoostMNDCB
             // 
@@ -2719,6 +3114,7 @@
             this.BoostMNDCB.TabIndex = 5;
             this.BoostMNDCB.Text = "Boost-MND";
             this.BoostMNDCB.UseVisualStyleBackColor = true;
+            this.BoostMNDCB.CheckedChanged += new System.EventHandler(this.BoostMNDCB_CheckedChanged);
             // 
             // BoostVITCB
             // 
@@ -2730,6 +3126,7 @@
             this.BoostVITCB.TabIndex = 5;
             this.BoostVITCB.Text = "Boost-VIT";
             this.BoostVITCB.UseVisualStyleBackColor = true;
+            this.BoostVITCB.CheckedChanged += new System.EventHandler(this.BoostVITCB_CheckedChanged);
             // 
             // UtsusemiNiCB
             // 
@@ -2741,6 +3138,7 @@
             this.UtsusemiNiCB.TabIndex = 5;
             this.UtsusemiNiCB.Text = "Utsusemi Ni";
             this.UtsusemiNiCB.UseVisualStyleBackColor = true;
+            this.UtsusemiNiCB.CheckedChanged += new System.EventHandler(this.UtsusemiNiCB_CheckedChanged);
             // 
             // UtsusemiIchiCB
             // 
@@ -2752,10 +3150,13 @@
             this.UtsusemiIchiCB.TabIndex = 6;
             this.UtsusemiIchiCB.Text = "Utsusemi Ichi";
             this.UtsusemiIchiCB.UseVisualStyleBackColor = true;
+            this.UtsusemiIchiCB.CheckedChanged += new System.EventHandler(this.UtsusemiIchiCB_CheckedChanged);
             // 
             // NavTabPage
             // 
             this.NavTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.NavTabPage.Controls.Add(this.metroTextBox1);
+            this.NavTabPage.Controls.Add(this.metroPanel2);
             this.NavTabPage.Controls.Add(this.ClearWaypointsBtn);
             this.NavTabPage.Controls.Add(this.RecordBtn);
             this.NavTabPage.Controls.Add(this.WayPointListbox);
@@ -2765,23 +3166,25 @@
             this.NavTabPage.Name = "NavTabPage";
             this.NavTabPage.Size = new System.Drawing.Size(783, 252);
             this.NavTabPage.TabIndex = 7;
-            this.NavTabPage.Text = "Nav";
+            this.NavTabPage.Text = "A*";
             this.NavTabPage.VerticalScrollbarBarColor = true;
             // 
             // ClearWaypointsBtn
             // 
-            this.ClearWaypointsBtn.Location = new System.Drawing.Point(337, 59);
+            this.ClearWaypointsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ClearWaypointsBtn.Location = new System.Drawing.Point(331, 50);
             this.ClearWaypointsBtn.Name = "ClearWaypointsBtn";
-            this.ClearWaypointsBtn.Size = new System.Drawing.Size(83, 23);
+            this.ClearWaypointsBtn.Size = new System.Drawing.Size(452, 23);
             this.ClearWaypointsBtn.TabIndex = 36;
             this.ClearWaypointsBtn.Text = "Clear";
             this.ClearWaypointsBtn.Click += new System.EventHandler(this.ClearWaypointsBtn_Click);
             // 
             // RecordBtn
             // 
-            this.RecordBtn.Location = new System.Drawing.Point(337, 30);
+            this.RecordBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RecordBtn.Location = new System.Drawing.Point(331, 27);
             this.RecordBtn.Name = "RecordBtn";
-            this.RecordBtn.Size = new System.Drawing.Size(83, 23);
+            this.RecordBtn.Size = new System.Drawing.Size(452, 23);
             this.RecordBtn.TabIndex = 35;
             this.RecordBtn.Text = "Record";
             this.RecordBtn.Click += new System.EventHandler(this.RecordBtn_Click);
@@ -2837,298 +3240,6 @@
             this.WPLoadedLB.Size = new System.Drawing.Size(27, 24);
             this.WPLoadedLB.Text = "---";
             // 
-            // ChatTab
-            // 
-            this.ChatTab.BackColor = System.Drawing.Color.Transparent;
-            this.ChatTab.CausesValidation = false;
-            this.ChatTab.Controls.Add(this.tabControl3);
-            this.ChatTab.Controls.Add(this.TextToFFxiTB);
-            this.ChatTab.HorizontalScrollbar = true;
-            this.ChatTab.HorizontalScrollbarBarColor = true;
-            this.ChatTab.HorizontalScrollbarSize = 12;
-            this.ChatTab.Location = new System.Drawing.Point(4, 39);
-            this.ChatTab.Margin = new System.Windows.Forms.Padding(0);
-            this.ChatTab.Name = "ChatTab";
-            this.ChatTab.Padding = new System.Windows.Forms.Padding(1);
-            this.ChatTab.Size = new System.Drawing.Size(793, 329);
-            this.ChatTab.TabIndex = 0;
-            this.ChatTab.Text = "Chat";
-            this.ChatTab.VerticalScrollbar = true;
-            this.ChatTab.VerticalScrollbarBarColor = true;
-            this.ChatTab.VerticalScrollbarSize = 13;
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl3.CausesValidation = false;
-            this.tabControl3.Controls.Add(this.tabPage1);
-            this.tabControl3.Controls.Add(this.chatTabPage);
-            this.tabControl3.Controls.Add(this.partyTabPage);
-            this.tabControl3.Controls.Add(this.sayTabPage);
-            this.tabControl3.Controls.Add(this.shellTabPage);
-            this.tabControl3.Controls.Add(this.ShoutTabPage);
-            this.tabControl3.Controls.Add(this.tellTabPage);
-            this.tabControl3.Controls.Add(this.YellTabPage);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(1, 1);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl3.Multiline = true;
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 7;
-            this.tabControl3.Size = new System.Drawing.Size(791, 302);
-            this.tabControl3.TabIndex = 12;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.CausesValidation = false;
-            this.tabPage1.Controls.Add(this.rtbDebug);
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(783, 259);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Debug";
-            // 
-            // rtbDebug
-            // 
-            this.rtbDebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbDebug.CausesValidation = false;
-            this.rtbDebug.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbDebug.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDebug.ForeColor = System.Drawing.Color.Yellow;
-            this.rtbDebug.Location = new System.Drawing.Point(0, 0);
-            this.rtbDebug.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbDebug.Name = "rtbDebug";
-            this.rtbDebug.ReadOnly = true;
-            this.rtbDebug.Size = new System.Drawing.Size(783, 259);
-            this.rtbDebug.TabIndex = 0;
-            this.rtbDebug.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbDebug, "Double click to save Debug log");
-            this.rtbDebug.DoubleClick += new System.EventHandler(this.RtbDebug_DoubleClick);
-            // 
-            // chatTabPage
-            // 
-            this.chatTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.chatTabPage.CausesValidation = false;
-            this.chatTabPage.Controls.Add(this.rtbChat);
-            this.chatTabPage.Location = new System.Drawing.Point(4, 4);
-            this.chatTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.chatTabPage.Name = "chatTabPage";
-            this.chatTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.chatTabPage.Size = new System.Drawing.Size(783, 259);
-            this.chatTabPage.TabIndex = 0;
-            this.chatTabPage.Text = "All";
-            // 
-            // rtbChat
-            // 
-            this.rtbChat.BackColor = System.Drawing.Color.Black;
-            this.rtbChat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbChat.CausesValidation = false;
-            this.rtbChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbChat.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbChat.ForeColor = System.Drawing.Color.White;
-            this.rtbChat.Location = new System.Drawing.Point(4, 4);
-            this.rtbChat.Margin = new System.Windows.Forms.Padding(0);
-            this.rtbChat.Name = "rtbChat";
-            this.rtbChat.ReadOnly = true;
-            this.rtbChat.Size = new System.Drawing.Size(775, 251);
-            this.rtbChat.TabIndex = 0;
-            this.rtbChat.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbChat, "Double click to save All log");
-            this.rtbChat.DoubleClick += new System.EventHandler(this.RtbChat_DoubleClick);
-            // 
-            // partyTabPage
-            // 
-            this.partyTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.partyTabPage.CausesValidation = false;
-            this.partyTabPage.Controls.Add(this.rtbParty);
-            this.partyTabPage.Location = new System.Drawing.Point(4, 4);
-            this.partyTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.partyTabPage.Name = "partyTabPage";
-            this.partyTabPage.Size = new System.Drawing.Size(783, 259);
-            this.partyTabPage.TabIndex = 3;
-            this.partyTabPage.Text = "Party";
-            // 
-            // rtbParty
-            // 
-            this.rtbParty.BackColor = System.Drawing.Color.Black;
-            this.rtbParty.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbParty.CausesValidation = false;
-            this.rtbParty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbParty.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbParty.Location = new System.Drawing.Point(0, 0);
-            this.rtbParty.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbParty.Name = "rtbParty";
-            this.rtbParty.ReadOnly = true;
-            this.rtbParty.Size = new System.Drawing.Size(783, 259);
-            this.rtbParty.TabIndex = 2;
-            this.rtbParty.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbParty, "Double click to save Party log");
-            this.rtbParty.DoubleClick += new System.EventHandler(this.RtbParty_DoubleClick);
-            // 
-            // sayTabPage
-            // 
-            this.sayTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.sayTabPage.CausesValidation = false;
-            this.sayTabPage.Controls.Add(this.rtbSay);
-            this.sayTabPage.Location = new System.Drawing.Point(4, 4);
-            this.sayTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.sayTabPage.Name = "sayTabPage";
-            this.sayTabPage.Size = new System.Drawing.Size(783, 259);
-            this.sayTabPage.TabIndex = 2;
-            this.sayTabPage.Text = "Say";
-            // 
-            // rtbSay
-            // 
-            this.rtbSay.BackColor = System.Drawing.Color.Black;
-            this.rtbSay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbSay.CausesValidation = false;
-            this.rtbSay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbSay.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbSay.Location = new System.Drawing.Point(0, 0);
-            this.rtbSay.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbSay.Name = "rtbSay";
-            this.rtbSay.ReadOnly = true;
-            this.rtbSay.Size = new System.Drawing.Size(783, 259);
-            this.rtbSay.TabIndex = 1;
-            this.rtbSay.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbSay, "Double click to save Say log");
-            this.rtbSay.DoubleClick += new System.EventHandler(this.RtbSay_DoubleClick);
-            // 
-            // shellTabPage
-            // 
-            this.shellTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.shellTabPage.CausesValidation = false;
-            this.shellTabPage.Controls.Add(this.rtbShell);
-            this.shellTabPage.Location = new System.Drawing.Point(4, 4);
-            this.shellTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.shellTabPage.Name = "shellTabPage";
-            this.shellTabPage.Size = new System.Drawing.Size(783, 259);
-            this.shellTabPage.TabIndex = 4;
-            this.shellTabPage.Text = "Shell";
-            // 
-            // rtbShell
-            // 
-            this.rtbShell.BackColor = System.Drawing.Color.Black;
-            this.rtbShell.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbShell.CausesValidation = false;
-            this.rtbShell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbShell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbShell.Location = new System.Drawing.Point(0, 0);
-            this.rtbShell.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbShell.Name = "rtbShell";
-            this.rtbShell.ReadOnly = true;
-            this.rtbShell.Size = new System.Drawing.Size(783, 259);
-            this.rtbShell.TabIndex = 3;
-            this.rtbShell.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbShell, "Double click to save Shell log");
-            this.rtbShell.DoubleClick += new System.EventHandler(this.RtbShell_DoubleClick);
-            // 
-            // ShoutTabPage
-            // 
-            this.ShoutTabPage.CausesValidation = false;
-            this.ShoutTabPage.Controls.Add(this.rtbShout);
-            this.ShoutTabPage.Location = new System.Drawing.Point(4, 4);
-            this.ShoutTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.ShoutTabPage.Name = "ShoutTabPage";
-            this.ShoutTabPage.Size = new System.Drawing.Size(783, 259);
-            this.ShoutTabPage.TabIndex = 8;
-            this.ShoutTabPage.Text = "Shout";
-            this.ShoutTabPage.UseVisualStyleBackColor = true;
-            // 
-            // rtbShout
-            // 
-            this.rtbShout.BackColor = System.Drawing.Color.Black;
-            this.rtbShout.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbShout.CausesValidation = false;
-            this.rtbShout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbShout.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbShout.Location = new System.Drawing.Point(0, 0);
-            this.rtbShout.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbShout.Name = "rtbShout";
-            this.rtbShout.ReadOnly = true;
-            this.rtbShout.Size = new System.Drawing.Size(783, 259);
-            this.rtbShout.TabIndex = 2;
-            this.rtbShout.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbShout, "Double click to save Shout  log");
-            this.rtbShout.DoubleClick += new System.EventHandler(this.RtbShout_DoubleClick);
-            // 
-            // tellTabPage
-            // 
-            this.tellTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.tellTabPage.CausesValidation = false;
-            this.tellTabPage.Controls.Add(this.rtbTell);
-            this.tellTabPage.Location = new System.Drawing.Point(4, 4);
-            this.tellTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.tellTabPage.Name = "tellTabPage";
-            this.tellTabPage.Size = new System.Drawing.Size(783, 259);
-            this.tellTabPage.TabIndex = 1;
-            this.tellTabPage.Text = "Tell";
-            // 
-            // rtbTell
-            // 
-            this.rtbTell.BackColor = System.Drawing.Color.Black;
-            this.rtbTell.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbTell.CausesValidation = false;
-            this.rtbTell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbTell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbTell.Location = new System.Drawing.Point(0, 0);
-            this.rtbTell.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbTell.Name = "rtbTell";
-            this.rtbTell.ReadOnly = true;
-            this.rtbTell.Size = new System.Drawing.Size(783, 259);
-            this.rtbTell.TabIndex = 0;
-            this.rtbTell.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbTell, "Double click to save Tell log");
-            this.rtbTell.DoubleClick += new System.EventHandler(this.RtbTell_DoubleClick);
-            // 
-            // YellTabPage
-            // 
-            this.YellTabPage.CausesValidation = false;
-            this.YellTabPage.Controls.Add(this.rtbYell);
-            this.YellTabPage.Location = new System.Drawing.Point(4, 4);
-            this.YellTabPage.Margin = new System.Windows.Forms.Padding(4);
-            this.YellTabPage.Name = "YellTabPage";
-            this.YellTabPage.Size = new System.Drawing.Size(783, 259);
-            this.YellTabPage.TabIndex = 6;
-            this.YellTabPage.Text = "Yell";
-            this.YellTabPage.UseVisualStyleBackColor = true;
-            // 
-            // rtbYell
-            // 
-            this.rtbYell.BackColor = System.Drawing.Color.Black;
-            this.rtbYell.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbYell.CausesValidation = false;
-            this.rtbYell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbYell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbYell.Location = new System.Drawing.Point(0, 0);
-            this.rtbYell.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbYell.Name = "rtbYell";
-            this.rtbYell.ReadOnly = true;
-            this.rtbYell.Size = new System.Drawing.Size(783, 259);
-            this.rtbYell.TabIndex = 1;
-            this.rtbYell.Text = "";
-            this.metroToolTip1.SetToolTip(this.rtbYell, "Double click to save Yell log");
-            this.rtbYell.DoubleClick += new System.EventHandler(this.RtbYell_DoubleClick);
-            // 
-            // TextToFFxiTB
-            // 
-            this.TextToFFxiTB.BackColor = System.Drawing.Color.SteelBlue;
-            this.TextToFFxiTB.CausesValidation = false;
-            this.TextToFFxiTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TextToFFxiTB.ForeColor = System.Drawing.Color.FloralWhite;
-            this.TextToFFxiTB.Location = new System.Drawing.Point(1, 303);
-            this.TextToFFxiTB.Margin = new System.Windows.Forms.Padding(0);
-            this.TextToFFxiTB.Name = "TextToFFxiTB";
-            this.TextToFFxiTB.Size = new System.Drawing.Size(791, 25);
-            this.TextToFFxiTB.TabIndex = 13;
-            this.TextToFFxiTB.Text = "Send text to FFxi here, just type what you want to say & hit enter";
-            this.metroToolTip1.SetToolTip(this.TextToFFxiTB, "Send text to FFxi here.");
-            this.TextToFFxiTB.Click += new System.EventHandler(this.TextToFFxiTB_Click);
-            this.TextToFFxiTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextToFFxiTB_KeyPress);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -3155,7 +3266,7 @@
             // 
             this.OnTopToolStripMenuItem.CheckOnClick = true;
             this.OnTopToolStripMenuItem.Name = "OnTopToolStripMenuItem";
-            this.OnTopToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.OnTopToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.OnTopToolStripMenuItem.Text = "On Top";
             this.OnTopToolStripMenuItem.Click += new System.EventHandler(this.OnTopToolStripMenuItem_Click_1);
             // 
@@ -3163,23 +3274,22 @@
             // 
             this.TransparentToolStripMenuItem.CheckOnClick = true;
             this.TransparentToolStripMenuItem.Name = "TransparentToolStripMenuItem";
-            this.TransparentToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.TransparentToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.TransparentToolStripMenuItem.Text = "Transparent";
             this.TransparentToolStripMenuItem.Click += new System.EventHandler(this.TransparentToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.loadToolStripMenuItem.Text = "Load";
-            this.loadToolStripMenuItem.Visible = false;
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.SaveToolStripMenuItem.Text = "Save";
-            this.SaveToolStripMenuItem.Visible = false;
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ChatTimer
@@ -3189,6 +3299,97 @@
             // NaviTimer
             // 
             this.NaviTimer.Tick += new System.EventHandler(this.NaviTimer_Tick);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel2.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(244, 20);
+            this.metroLabel2.TabIndex = 37;
+            this.metroLabel2.Text = "How many failed to path attempts ? = ";
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Controls.Add(this.FailedUPdown);
+            this.metroPanel2.Controls.Add(this.metroLabel2);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(331, 73);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(452, 23);
+            this.metroPanel2.TabIndex = 39;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // FailedUPdown
+            // 
+            this.FailedUPdown.Dock = System.Windows.Forms.DockStyle.Left;
+            this.FailedUPdown.Location = new System.Drawing.Point(244, 0);
+            this.FailedUPdown.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.FailedUPdown.Name = "FailedUPdown";
+            this.FailedUPdown.Size = new System.Drawing.Size(55, 22);
+            this.FailedUPdown.TabIndex = 38;
+            this.FailedUPdown.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.FailedUPdown.ValueChanged += new System.EventHandler(this.FailedUPdown_ValueChanged);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(286, 59);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(266, 20);
+            this.metroLabel3.TabIndex = 4;
+            this.metroLabel3.Text = "Idle Delay before, looking again for mobs.";
+            // 
+            // IdleDelayValue
+            // 
+            this.IdleDelayValue.Location = new System.Drawing.Point(286, 82);
+            this.IdleDelayValue.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.IdleDelayValue.Name = "IdleDelayValue";
+            this.IdleDelayValue.Size = new System.Drawing.Size(52, 22);
+            this.IdleDelayValue.TabIndex = 5;
+            this.IdleDelayValue.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.IdleDelayValue.ValueChanged += new System.EventHandler(this.IdleDelayValue_ValueChanged);
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(344, 82);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(181, 20);
+            this.metroLabel11.TabIndex = 6;
+            this.metroLabel11.Text = "< Seconds + random value.";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroTextBox1.Location = new System.Drawing.Point(331, 158);
+            this.metroTextBox1.Multiline = true;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.Size = new System.Drawing.Size(452, 94);
+            this.metroTextBox1.TabIndex = 40;
+            this.metroTextBox1.Text = resources.GetString("metroTextBox1.Text");
             // 
             // ToonControl
             // 
@@ -3207,6 +3408,16 @@
             this.metroTabControl1.ResumeLayout(false);
             this.AboutTabPage.ResumeLayout(false);
             this.AboutTabPage.PerformLayout();
+            this.ChatTab.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.chatTabPage.ResumeLayout(false);
+            this.partyTabPage.ResumeLayout(false);
+            this.sayTabPage.ResumeLayout(false);
+            this.shellTabPage.ResumeLayout(false);
+            this.ShoutTabPage.ResumeLayout(false);
+            this.tellTabPage.ResumeLayout(false);
+            this.YellTabPage.ResumeLayout(false);
             this.HunterTabPage.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.TargetTabPage.ResumeLayout(false);
@@ -3240,18 +3451,12 @@
             this.NavTabPage.PerformLayout();
             this.NavToolStrip.ResumeLayout(false);
             this.NavToolStrip.PerformLayout();
-            this.ChatTab.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.chatTabPage.ResumeLayout(false);
-            this.partyTabPage.ResumeLayout(false);
-            this.sayTabPage.ResumeLayout(false);
-            this.shellTabPage.ResumeLayout(false);
-            this.ShoutTabPage.ResumeLayout(false);
-            this.tellTabPage.ResumeLayout(false);
-            this.YellTabPage.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FailedUPdown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdleDelayValue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3483,5 +3688,12 @@
         public System.Windows.Forms.ToolStripButton SaveWayPointsBtn;
         public System.Windows.Forms.ToolStripLabel WPLoadedLB;
         public System.Windows.Forms.Timer NaviTimer;
+        public MetroFramework.Controls.MetroLabel metroLabel2;
+        public MetroFramework.Controls.MetroPanel metroPanel2;
+        public System.Windows.Forms.NumericUpDown FailedUPdown;
+        public MetroFramework.Controls.MetroLabel metroLabel11;
+        public System.Windows.Forms.NumericUpDown IdleDelayValue;
+        public MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }

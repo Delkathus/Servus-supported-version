@@ -1,12 +1,13 @@
 ﻿using Servus_v2.Characters;
 using System;
+using System.Threading;
 
 namespace Servus_v2.Tasks.Hunter.States
 {
-    internal class Idle : State
+    internal class Idle : HunterState
     {
-        public Idle(Character Character)
-            : base(Character)
+        public Idle(Character Character, Options options, Taskstate Taskstate)
+            : base(Character, options, Taskstate)
         {
             Priority = int.MinValue;
             Enabled = true;
@@ -14,36 +15,7 @@ namespace Servus_v2.Tasks.Hunter.States
 
         public override int Frequency => 0;
 
-        public override bool NeedToRun
-        {
-            get
-            {
-                if (OnPartyDisband)
-                {
-                    var solo = true;
-                    for (byte i = 1; i < 16; i++)
-                    {
-                        if (Api.Party.GetPartyMember(i).Active != 0)
-                        {
-                            solo = false;
-                        }
-                        else
-                            solo = true;
-                    }
-
-                    Priority = solo ? int.MaxValue : int.MinValue;
-                    return solo;
-                }
-                if (OnDeath)
-                {
-                    Priority = Character.IsDead ? int.MaxValue : int.MinValue;
-                    return Character.IsDead;
-                }
-
-                Priority = int.MaxValue;
-                return true;
-            }
-        }
+        public override bool NeedToRun => TS.TargetMobId == 0;
 
         public bool OnDeath { get; set; }
         public bool OnPartyDisband { get; set; }
@@ -63,7 +35,22 @@ namespace Servus_v2.Tasks.Hunter.States
         {
             try
             {
+                var rand = new Random().Next(Options.IdleDelay, 99);
+
+                var later = DateTime.Now.AddSeconds(rand);
+
                 Log.AddDebugText(TC.rtbDebug, string.Format("{0} Idling..", Api.Player.Name));
+                while (DateTime.Now < later && TS.TargetMobId == 0)
+                {
+                    Thread.Sleep(100);
+                }
+                Character.Navi.FailedToPath = 0;
+                Log.AddDebugText(TC.rtbDebug, (string.Format(@"Reset failed to path count.")));
+                if (Character.Target.BlockedTargets.Count > 0)
+                {
+                    Character.Target.BlockedTargets.Clear();
+                    Log.AddDebugText(TC.rtbDebug, (string.Format(@"Cleared blocked ids.")));
+                }
             }
             catch (Exception ex)
             {

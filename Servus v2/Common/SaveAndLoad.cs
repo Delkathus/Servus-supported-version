@@ -1,4 +1,5 @@
-﻿using Servus_v2.Characters;
+﻿using DeenGames.Utils.AStarPathFinder;
+using Servus_v2.Characters;
 using System;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,53 @@ namespace Servus_v2.Common
         public SaveAndLoad(Character Char)
         {
             character = Char;
+        }
+
+        public void LoadWaypoints()
+        {
+            OpenFileDialog OpenDialog = new OpenFileDialog();
+
+            string startpath = Path.GetDirectoryName(Application.ExecutablePath);
+            string PATH = (String.Format(@"{0}Documents\\{1}\\Nav\\", startpath, character.Api.Player.Name));
+            OpenDialog.InitialDirectory = PATH;
+            OpenDialog.FilterIndex = 0;
+
+            if (OpenDialog.ShowDialog() == DialogResult.OK)
+            {
+                character.Navi.Reset();
+                character.Tc.WayPointListbox.Items.Clear();
+
+                string Waypoint_Filename = OpenDialog.FileName;
+                character.Logger.AddDebugText(character.Tc.rtbDebug, string.Format(@"Nav file loaded = {0}", Waypoint_Filename));
+                string[] break_filename = OpenDialog.FileName.Split('\\');
+                int name_pos = (break_filename.Count() - 1);
+                character.Tc.WPLoadedLB.Text = break_filename.ElementAt(name_pos);
+
+                FileStream fs = new FileStream(Waypoint_Filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+                StreamReader sr = new StreamReader(fs);
+
+                String Line;
+                while ((Line = sr.ReadLine()) != null)
+                {
+                    string[] Positions = Line.Split('|');
+
+                    // Add WP
+                    float _X = float.Parse(Positions.ElementAt(0));
+                    float _Y = float.Parse(Positions.ElementAt(1));
+                    float _Z = float.Parse(Positions.ElementAt(2));
+                    character.Tc.WayPointListbox.Items.Add(_X + ", " + _Y + ", " + _Z);
+                    Node Waypoint = new Node { X = _X, Y = _Y, Z = _Z };
+                    if (character.Navi.Grid[Convert.ToInt32(Waypoint.X) + 1000, Convert.ToInt32(Waypoint.Z) + 1000] == PathFinderHelper.BLOCKED_TILE)
+                    {
+                        character.Navi.Waypoints.Add(Waypoint);
+                        character.Navi.Grid[Convert.ToInt32(Waypoint.X) + 1000, Convert.ToInt32(Waypoint.Z) + 1000] = PathFinderHelper.EMPTY_TILE;
+                        character.Logger.AddDebugText(character.Tc.rtbDebug, string.Format(@"Added tile {0},{1}", (Convert.ToInt32(Waypoint.X) + 1000).ToString(),
+                        (Convert.ToInt32(Waypoint.Z) + 1000).ToString()));
+                    }
+                }
+                sr.Dispose();
+                sr.Close();
+            }
         }
 
         private string GetXMLString(string elementName, XmlElement parent, XmlDocument document)

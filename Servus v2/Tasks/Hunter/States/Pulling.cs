@@ -84,6 +84,7 @@ namespace Servus_v2.Tasks.Hunter.States
                         Api.ThirdParty.SendString("/attack <t>");
                         Thread.Sleep(1000);
                         Navi.GotoNPC(TS.TargetMobId, true);
+                        Exit();
                     }
                 }
             }

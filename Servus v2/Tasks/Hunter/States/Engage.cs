@@ -45,6 +45,7 @@ namespace Servus_v2.Tasks.Hunter.States
         {
             try
             {
+                Character.Navi.Reset();
                 var Target = Api.Target.GetTargetInfo();
                 var MobPos = new Node { X = Api.Entity.GetEntity(TS.TargetMobId).X, Z = Api.Entity.GetEntity(TS.TargetMobId).Z, Y = Api.Entity.GetEntity(TS.TargetMobId).Y };
                 Log.AddDebugText(TC.rtbDebug, "Engaging");
@@ -70,6 +71,14 @@ namespace Servus_v2.Tasks.Hunter.States
                 }
 
                 Api.ThirdParty.SendString("/attack <t>");
+
+                Character.Navi.FailedToPath = 0;
+                if (Character.Target.BlockedTargets.Count > 0)
+                {
+                    Character.Target.BlockedTargets.Clear();
+                    Log.AddDebugText(TC.rtbDebug, (string.Format(@"Cleared blocked ids")));
+                }
+
                 Thread.Sleep(2000);
             }
             catch (Exception ex)
