@@ -120,6 +120,14 @@ namespace Servus_v2.Characters
                     {
                         Tc.NpcLB.Items.Add(T.ToString());
                     }
+                    foreach (var ja in Tasks.Huntertask.Options.JobAbilityKeepActive)
+                    {
+                        Tc.JaActiveLB.Items.Add(ja.ToString());
+                    }
+                    foreach (var jaf in Tasks.Huntertask.Options.JobAbilityToUseOnlyDuringFights)
+                    {
+                        Tc.JaFightOnlyLb.Items.Add(jaf.ToString());
+                    }
                     Tc.TargetCountLb.Text = string.Format(@"Target count = {0}", Tasks.Huntertask.Options.Targets.Count.ToString());
                     Tc.SearchDistanceTrackBar.Value = Tasks.Huntertask.Options.SearchDistance;
                     Tc.PullDistanceTrackBar.Value = Tasks.Huntertask.Options.PullDistance;
